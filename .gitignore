@@ -1,0 +1,16 @@
+meiyu_*.tex
+*-eps-converted-to*
+meiyu draft 1.pdf
+*.synctex.gz*
+*aux
+*bbl
+*blg
+*fff
+*.pdf
+*ttt
+*lof
+*log
+*~
+*log
+*pyc
+

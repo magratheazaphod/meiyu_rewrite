@@ -1,0 +1,17 @@
+List of codes used to produce output
+
+MATLAB
+
+Meiyu Algorithm
+-fridaycontrol.m - external control script that provides days to meiyu.m
+-meiyu.m - analyze one day
+-fridaysave.m - save output as NetCDF
+
+Analysis
+-meiyuattribs.m - climatologies of relevant meiyu variables
+-meiyudates.m - converts days with certain properties into date format used by Jake
+-meiyustartend.m - so far abortive effort to determine start and end date of Meiyu season
+-meiyuhov.m - produces hovmoller plot out of occupied latitudes
+
+FERRET
+-meiyufigures.jnl - code necessary to produce all figures in paper
