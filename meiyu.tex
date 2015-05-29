@@ -1,3 +1,5 @@
+%%% REWRiTE OF meiyu.tex FOR RESUBMISSION TO GEOPHYSICAL RESEARCH LETTERS, BEGUN MAY 29 2015
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % AGUtmpl.tex: this template file is for articles formatted with LaTeX2e,
 % Modified March 2013
@@ -113,7 +115,7 @@
 \authorrunninghead{DAY ET AL.}
 
 % Shorter version of title entered in capital letters:
-\titlerunninghead{THE ``SOUTH FLOOD-NORTH DROUGHT'' IN MEIYU AND JET STATS}
+\titlerunninghead{THE ``SOUTH FLOOD-NORTH DROUGHT'' AND FRONTAL RAINFALL}
 
 %Corresponding author mailing address and e-mail address:
 \authoraddr{Corresponding author: Jesse Day, University of California Berkeley, Department of Earth and Planetary Science, College of Letters and Science; 307 McCone Hall, Berkeley, CA 94720, USA. (jessed@berkeley.edu)}
@@ -127,7 +129,7 @@
 %% ------------------------------------------------------------------------ %%
 
 
-\title{Signature of the ``South Flood-North Drought" in Meiyu Front and Tropospheric Jet Changes}
+\title{The ``South Flood-North Drought:'' Time-varying Characteristics of late-twentieth-century China Frontal Rainfall}
 
 %% ------------------------------------------------------------------------ %%
 %
@@ -141,13 +143,10 @@
 % \altaffilmark will produce footnote;
 % matching \altaffiltext will appear at bottom of page.
 
-\authors{Jesse A. Day\altaffilmark{1},
-Jacob P. Edman\altaffilmark{1}, John C. H. Chiang\altaffilmark{2}, Inez Fung \altaffilmark{1}, and
-Weihan Liu\altaffilmark{3}}
+\authors{Jesse A. Day\altaffilmark{1}, Inez Fung \altaffilmark{1}, and Weihan Liu\altaffilmark{2}}
 
 \altaffiltext{1}{Department of Earth and Planetary Science, University of California Berkeley, Berkeley, California, USA.}
-\altaffiltext{2}{Department of Geography, University of California Berkeley, Berkeley, California, USA.}
-\altaffiltext{3}{College of Letters and Science, University of California Berkeley, Berkeley, California, USA.}
+\altaffiltext{2}{College of Letters and Science, University of California Berkeley, Berkeley, California, USA.}
 
 
 %% ------------------------------------------------------------------------ %%
@@ -161,7 +160,7 @@ Weihan Liu\altaffilmark{3}}
 
 %Needs to be 150 words or less - currently at 147.
 \begin{abstract}
-A novel 57-year (1951-2007) daily catalog of frontal rainbands over China is compiled based on APHRODITE rain gauge data, resulting in an unprecedented climatology of Meiyu front progression in summer. Late \nth{20}-century changes in Chinese summer rainfall are investigated (the ``South Flood-North Drought''). Two robust changes in front behavior are observed during 1980-2007 relative to 1951-1979: 1) A significant decrease in the frequency of frontal rainbands during the Pre-Meiyu period (May), and 2) a southward shift in Post-Meiyu rainbands (mid-July to September). In addition, the mean latitude of the tropospheric jet has shifted southward during both time periods. We propose that the observed changes in frontal rainfall reflect an overall southward displacement of the tropospheric jet's summer progression. By linking East Asian climate change to larger-scale change, our results begin to address the critical question of whether the South Flood-North Drought will persist under \nth{21}-century global warming.
+A novel 57-year (1951-2007) daily catalog of frontal rainbands over China is compiled based on APHRODITE rain gauge data, resulting in an unprecedented climatology of Meiyu front progression in summer. Late \nth{20}-century changes in Chinese summer rainfall are investigated (the ``South Flood-North Drought''). Two robust changes in front behavior are observed during 1980-2007 relative to 1951-1979: 1) A significant decrease in the frequency of frontal rainbands during the Pre-Meiyu period (May), and 2) a southward shift in Post-Meiyu rainbands (mid-July to September). In contrast, the years 1994-2007 are marked by an increase in frontal intensity during Meiyu season relative to 1979-1993, but not frequency. By finding changes in the component of China rainfall associated with the large-scale atmosphere, our results begin to address the critical question of whether the South Flood-North Drought will persist under \nth{21}-century global warming.
 \end{abstract}
 
 %% Allowed length of manuscript is (# of words/500) + # of figures + # of tables.
@@ -176,24 +175,61 @@ A novel 57-year (1951-2007) daily catalog of frontal rainbands over China is com
  
 	The climatology of the East Asian monsoon bears little resemblance to other monsoon circulations \citep{Ding2005}. Whereas understanding of tropical monsoons has progressed greatly via theoretical studies \citep{Plumb1992,Prive2007,Bordoni2008}, the dynamics that favor the existence of frontal convection over East Asia in summer remain a point of debate, centering around the interplay of the tropospheric jet and Tibetan Plateau \citep{Molnar2010,Sampe2010,Chen2014}. Therefore, no simple conceptual template exists for interpreting a change such as the South Flood-North Drought. However, it is known that the migration of the Meiyu front entails a series of large-scale circulation changes \citep{Chen2004}, and furthermore that anomalies in Meiyu front latitude produce corresponding rainfall anomalies \citep{Kosaka2011}. Therefore, the South Flood-North Drought should be describable in terms of changes in the properties of Meiyu rainbands, such as a shift in latitude, a change in intensity or an earlier or delayed northward migration. In turn, such a characterization may provide insight into the dynamics responsible for the change.
 	
-	In pursuit of this aim, we have developed a 57-year database (1951-2007) of frontal rainbands in China based on the APHRODITE rain gauge product (described below). We develop a recursive convergent fitting algorithm of daily rainfall maps which finds rainbands and quantifies their attributes. Previous studies have investigated the statistics of the Meiyu front on decadal and even centennial timescales \citep{Chen2004,Ge2008,Xu2009}, but to our knowledge no previous author has compiled a multi-decadal daily catalog of events. We use this catalog to clarify the spatial and temporal attributes of the South Flood-North Drought, and present it as a tool for future East Asian monsoon research.
+	In pursuit of this aim, we have developed a 57-year database (1951-2007) of frontal rainbands in China based on the APHRODITE rain gauge product (described below). We develop a recursive convergent fitting algorithm of daily rainfall maps which finds rainbands and quantifies their attributes. Previous studies have investigated the statistics of the Meiyu front on decadal and even centennial timescales \citep{Chen2004,Ge2008,Xu2009}, but to our knowledge no previous author has compiled a multi-decadal daily catalog of events. We use this catalog to clarify the spatial and temporal attributes of the South Flood-North Drought, and present it as a tool for future East Asian monsoon research. We also expect that the South Flood-North Drought corresponds to larger-scale late-twentieth-century climatic changes, in particular the tropospheric jet, which plays an essential and complex role in East Asian summer climate \citep{Molnar2010}. We will further study changes in the jet in a subsequent companion paper.
 		
-	We also explore decadal changes in the subtropical jet, which plays an essential and complex role in East Asian climate both in summer and winter \citep{Molnar2010,Yang2002}. In a region of strong fronts as observed in East Asia, theory predicts that the core of maximum zonal wind should anchor an equatorward region of ascent and strong rainfall \citep{Holton2004}. The Tibetan Plateau couples with the jet nonlinearly, amplifying the regional response to global climate anomalies \citep{Nigam1989,Broccoli1992,Park1997}. The jet's passage north of the Tibetan Plateau in summer is argued to dictate the timing of onset of the Indian and East Asian monsoons, both in present-day \citep{Yin1949,Yeh1959,Hahn1975} and on paleoclimate timescales \citep{Nagashima2011,Nagashima2013,Chiang2015}. On a weekly timescale, the jet serves as a waveguide for storms propagating from the Eurasian interior via the ``Silk Road'' teleconnection \citep{Hoskins1993,Ambrizzi1997,Kosaka2012}, and shifts in its latitude and strength induce corresponding rainfall anomalies \citep{Liang1998,Kwon2007,Du2009,Li2014}. Thus, we expect that the South Flood-North Drought has also entailed \nth{20}-century changes in the East Asian tropospheric jet. Therefore, we compare our rainband database to a database of jet counts from 1958 to 2001 from \citet{Schiemann2009} in search of coupled change.
-	
 \section{Data and Methods}
 
 \subsection{APHRODITE}
 
 	The APHRO\_MA\_V1101 product from APHRODITE (Asian Precipitation - Highly-Resolved Observational Data Integration Towards Evaluation of the Water Resources) includes 57 years (1951-2007) of daily rainfall (PRECIP product) on a .25\textdegree\ $\times$ .25\textdegree\ grid over 60-150\textdegree E and 15\textdegree S-55\textdegree N \citep{Yatagai2012}. Values are assimilated from weather station observations and therefore available over land only. We focus on the subregion inside of 100\textdegree E-123\textdegree E and 20\textdegree N-40\textdegree N, where Meiyu rainbands occur. Stations in this region are spaced at 100-200 km intervals (shown by RSTN product), such that rainbands are clearly resolved. APHRODITE's resolution cannot capture some features visible in TRMM satellite data \citep{Xu2009}, but its length allows for the study of decadal change.
 	
-\subsection{Jet Count Density} 
-
-	\citet{Schiemann2009} constructed a data set of jet `counts' in the Tibetan Plateau region (46\textdegree E-130\textdegree E, 17\textdegree N-58\textdegree N) from ERA-40 reanalysis for 1958-2001, where a count is defined as any local maximum in zonal wind with westerly magnitude greater than $30$ m s$^{-1}$; further details can be found in section 2 of \citet{Schiemann2009}. We show daily mean jet latitude averaged across $90-130^\circ$E in Figure \ref{jet_seasonal}a and monthly anomalies in Figure \ref{jet_seasonal}b. Results are not sensitive to the choice of longitude range. Figure \ref{climo} presents contours of jet frequency estimated by a kernel density method, which estimates a probability distribution from a set of discrete data observations (Supplementary Text S4).
-	
 \subsection{Rainband Detection Algorithm}
 
-	For each day from 1 January 1951 to 31 December 2007 (20,819 days total), our algorithm determines whether a rainband exists inside the window of 105-123\textdegree E and 20-40\textdegree N. A rainband is defined as a continuous chain of rainfall maxima exceeding 10 mm day$^{-1}$ spanning more than 5\textdegree of longitude. If such a band exists, a recursive algorithm finds its position. Subsequently, properties of the rainband are calculated including latitude, intensity, tilt, length and width, as well as a ``quality score'' $Q$, defined as the fraction of daily rainfall occurring within the band. Days where $Q<.6$ are thrown out. We also test for the existence of two rainbands on a single day, an arrangement commonly found in August and September. In such a case, the first and second fitted rainbands are referred to as ``primary'' and ``secondary'' rainbands respectively. Days dominated by heavy local rainfall over Taiwan are discarded. A step-by-step description of the algorithm is presented in Supplementary Text S2 and Supplementary Figures S1-S4, and metrics of its performance documented in Supplementary Tables S1-S3. Our algorithm does not distinguish between the mechanisms that supply rainfall.
+\subsubsection{Overview}
 
+	For each day from 1 January 1951 to 31 December 2007 (20,819 days total), our recursive convergent image processing algorithm determines whether a rainband, defined as a continuous chain of rainfall maxima exceeding 10 mm day$^{-1}$ spanning at least 5\textdegree of longitude, exists inside the window of 105-123\textdegree E and 20-40\textdegree N. Properties of the rainband are calculated including latitude, intensity, tilt, length and width, as well as a ``quality score'' $Q$, defined as the fraction of daily rainfall occurring within the band. Fits with $Q<.6$ are discarded. We also test for the existence of two rainbands on a single day, an arrangement commonly found in August and September. In such a case, the first and second fitted rainbands are referred to as ``primary'' and ``secondary'' rainbands respectively. Our algorithm does not distinguish between the mechanisms that supply rainfall. Metrics of algorithm performance are documented in Supplementary Tables S1-S3. 
+	
+\subsubsection{Recursive Convergent Image Processing}
+
+\begin{enumerate}
+	\item Given a map of daily accumulated rainfall over the longitudes 105-123$^{\circ}$E and 20-40$^{\circ}$N at $.25^{\circ}$ by $.25^{\circ}$ resolution, the daily rainfall maximum at each longitude is found, and its intensity and latitude recorded. If there exists a $5^{\circ}$ continuous chain of maxima (20 points in a row) exceeding 10 mm day$^{-1}$, we proceed to step 2 and attempt a fit (Figure S1a). Otherwise, no fit is attempted for that day (Figure S1b).
+	
+	\item In order to approximate the position of the rainband with a best fit line, a weighted least-squares linear fit of the \textit{latitudes} of the maxima is performed in MATLAB using the intensity of each maximum as weight. To encourage convergence, the weight of outlying points is set to zero, where an outlier is defined as any maximum that is over $5^{\circ}$ from the centroid of the precipitation maxima $\left<lat_{max}\right>$, calculated by $\left<lat_{max}\right>=\frac{\sum_{long} lat_{max}*max}{\sum_{long} \max}$.
+	
+	\item A recursive algorithm converges on a best estimate of rainband position. In each iteration, we find a new set of maxima within \textit{k} degrees of the previous best fit line, and again perform a weighted linear fit of the maxima (Figure S2a). $k$ is progressively decreased with each iteration from $5^{\circ}$ to $2^{\circ}$ by $.25^{\circ}$ increments, and then from $2^{\circ}$ to $.25^{\circ}$ by $.25^{\circ}$ increments but repeating each width $k$ twice in a row (Figures S2b-c). The fit obtained in the final iteration is taken as our best estimate (Figure S2d).
+	
+	\item We define the ``quality score'' $Q$ as the fraction of total daily precipitation inside of  that falls within $2.5^{\circ}$ degrees of the best estimate line (Figure 4b). Other rainband properties are calculated as follows. Rainband latitude is defined as the latitude of our fitted band at the reference longitude of 115$^{\circ}$E. Intensity is defined as mean rainfall at all points along the band axis where daily rainfall exceeds 5 mm day$^{-1}$ (``rainband points''), length as the total number of rainband points (expressed in units of degrees of longitude), and width as the mean distance between half-maxima on either side of each rainband point (units of degrees of latitude).
+	
+	\item Given an estimate of primary rainband, we check for a secondary rainband. We start by removing all precipitation associated with the primary rainband from our daily rainfall map. To do this, all rainfall within 4$^{\circ}$ of our primary rainband is set to 0, as well as rainfall at any other adjacent points where rainfall exceeds 10 mm day$^{-1}$ (Figure S3a). We then reapply the continuous maximum criterion from step 1 (Figure S3b). If passed, steps 2-4 are repeated to find a best estimate for the position of the secondary rainband, and its attributes calculated.
+	
+	\item If a secondary rainband is found, two additional quality scores $Q_1$ and $Q_2$ are calculated. $Q_1$ is defined as the fraction of daily rainfall inside of 105-123$^{\circ}$E and 20-40$^{\circ}$N that is contained within $2.5^{\circ}$ degrees of the primary rainband \textit{after removing all rainfall associated with the secondary rainband} (equivalently, the $Q$ score after removing the secondary rainband). Likewise, $Q_2$ is the $Q$ score of the second rainband \textit{after removing all rainfall from the primary rainband} (Figure S4d).		
+	
+\end{enumerate} 
+
+In rare cases with two rainbands of roughly equal strength but well-separated in latitude, the removal of outliers in step 2 prevents a fit entirely. We test for such cases by ensuring that the total sum of weights ${\sum_{long} max}$ exceeds 200 mm day$^{-1}$, equivalent to our condition in bullet point 1. When this condition is failed, which can only occur when too many of our maxima have been discarded, we return to step 1, but find maxima only over the latitude range 20N-$\left<lat_{max}\right>$ or $\left<lat_{max}\right>$-40N, depending on which half of our domain has a longer chain of maxima exceeding 10 mm day$^{-1}$, and apply the remaining steps of our algorithm as usual.
+
+\subsubsection{Quality Control}
+
+After running the algorithm for all 20,819 days from 1 January 1951 to 31 December 2007, we obtained 11,228 days with at least one rainband and 1,116 days with two rainbands. Subsequently, we apply a quality control (QC) algorithm to eliminate days with poor fit, based on the quality scores $Q$, $Q_1$ and $Q_2$ as well as the ``Taiwan fraction'' (TW), defined as the percentage of daily rainfall inside the window 105-$123^{\circ}$E and 20-$40^{\circ}$N that falls over the island of Taiwan (roughly 120-$122^{\circ}$E and 22-$26^{\circ}$N. We use these metrics to define the following two criteria for inclusion:
+
+\begin{enumerate}
+
+	\item If $TW > 20\%$, the day's fit is thrown out (238 cases total, 2.1\% of total fits). Such days are dominated by a local storm reaching Taiwan and do not exhibit a strong rainband (Figure 4a).  
+	
+	\item Subsequently, a day can be included if it meets either of the following criteria:
+	
+	\begin{enumerate} 
+	
+	\item if $Q>.6$, the day is included in our statistics (7,522 days, 67.0\% of total fits; Figure 4b). If $Q_2$ is also greater than .6, the day will be classified as a double rainband day (Type I double rainband; 232 cases, or 3.1\% of days where $Q>.6$ and $Q_2>.6$).
+		
+	\item If $Q<.6$, the day is discarded unless two fronts are detected and both $Q_1 \mathrm{\textbf{ and }} Q_2 > .6$ (where again $Q_1$ and $Q_2$ are \textit{conditional} quality scores as defined above). In such cases, the presence of multiple rainbands of similar intensity initially obscures the quality of the fit (Figure 4d). Such days are also classified as double rainband days (Type II double rainband; 466 cases). In the absence of such a double rainband configuration the day is thrown out (Figure 4c).
+	
+	\end{enumerate}
+	
+\end{enumerate}	
+
+	The use of conditional quality scores $Q_1$ and $Q_2$ adds 466 double rainband days that would otherwise have been categorized as days with no rainband, constituting 6.2\% of total days included in our statistics. 33.2\% of double rainband days are Type I ($Q>.6$) and 66.8\% Type II ($Q<.6$). Double rainbands are more common during certain seasons such as the Post-Meiyu (see Figure 1c in main text). Tables S1-S3 contain more information on algorithm functionality.
+	
 \subsection{Bootstrapping and Significance of Changes}
 
 	The standard deviation and significance of changes in rainband frequency are calculated analytically. However, rainband statistics and jet count density do not follow a normal distribution. Therefore, we use bootstrapping with replacement to calculate the standard deviation of their means (Figure \ref{jet_seasonal}a and Supplementary Tables S4-S8 respectively). To calculate the statistical significance of differences in mean between two samples, two methods are used: 1) Bootstrapping with replacement and 2) a permutation test (bootstrapping without replacement) \citep{Good2005}. Both produce similar results; $p$-values shown are from permutation testing. Figure 3a uses a moving blocks bootstrap with block length of 3 days (Supplementary Text S3). We focus on changes in front attributes between 1951-1979 and 1980-2007 (Supplementary Tables S5 and S6), and successfully verified that results are robust using only the years spanned by the jet database (1980-2001 versus 1958-1979; not shown).
@@ -212,394 +248,28 @@ A novel 57-year (1951-2007) daily catalog of frontal rainbands over China is com
 		
 	In addition, a southward shift in mean rainband latitude has occurred during the Post-Meiyu (days 201-273, or July 20-Sep 30). Considering both primary and secondary rainbands north of 27\textdegree N, which are associated with the jet (Figure \ref{climo}d and Figure \ref{jet_seasonal}c), mean latitude during 1951-1979 was $33.6^\circ \textrm{N} \pm .3^\circ$ versus $32.9^\circ \textrm{N} \pm .3^\circ$ during 1980-2007 ($p=.0003$; Table S6). This shift remains significant if we do not restrict by front latitude ($p=.0048$). A Post-Meiyu rainfall increase in central China and decrease in northern China has also occurred, producing a South Flood-North Drought pattern (Figure \ref{changes_2d}c). As a result, yearly rainfall has increased in central China even though Pre-Meiyu rainfall changes in that region are negative (Figure \ref{changes_2d}a). Unlike \citet{Yu2010}, our catalog does not exhibit a \nth{20}-century decrease in the intensity of Yangtze River region frontal rainbands during July-August. A significant southward shift in rainband latitude is also found for the whole year ($p=.0032$, Table S6), but this signal is dominated by the Post-Meiyu shift.
 	
-\section{Jet}
+\subsection{Changes in Rainband Attributes, 1994-2007 Versus 1979-1993}
 
-\subsection{Dynamics}
-
-	The tropospheric jet marks the northern boundary of the Hadley Cell, and shifts in response to seasonal changes in insolation \citep{Bordoni2008}. Beginning in May, the East Asian jet moves from its winter position on the southern flank of the Tibetan Plateau to a summer latitude well north of the plateau. During this transition, the jet occupies intermediate configurations that correspond to different stages of China rainfall (Figure \ref{climo}). A full monthly jet climatology is visible in \citet{Schiemann2009}. Peak rainfall rates in China from May to mid-July corresponds to the months when the climatological latitude of the jet impinges on the Tibetan Plateau. The interaction of the tropospheric jet and Tibetan Plateau strengthens convergence and rainfall downstream over China and the western Pacific Ocean \citep{Molnar2010,Sampe2010,Chen2014}. From May to September,  the climatological latitude of rainfall, rainbands and jet density are all closely coupled, with peak jet density occurring 5 to 10 degrees north of the latitude of peak rainfall. The initiation of the Pre-Meiyu corresponds roughly to the beginning of the jet's northward passage. During Meiyu season, the preferred latitude of the jet continues to shift northward. The period of frequent double rainband occurrence during the Post-Meiyu corresponds to the jet's maximal northward extent. Finally, the jet returns southward during the Fall Rains in October and November, which produces only a weak rainfall response.
-	
-\subsection{Jet Changes, 1980-2001 Versus 1958-1979}
-
-	In Figure \ref{jet_seasonal}a, we show the zonal average over $90-130^\circ$E) of mean jet latitude, averaged over the years 1958-1979 (blue solid line) and 1980-2001 (dashed red line) with 95\% confidence intervals overlain. Both significant changes in rainband statistics described in the previous section correspond to southward shifts in mean jet latitude. During the Pre-Meiyu (May), the tropospheric jet is shifted southward by almost 2\textdegree\ in 1980-2001 relative to 1958-1979, when its mean latitude was $\approx 41^\circ$N. We estimate the significance of this change using a two-tailed Kolmogorov-Smirnov (K-S) test. Since the K-S test requires that all samples are independent, we first remove temporal autocorrelation due to synoptic variability by assimilating daily mean jet latitude into 4 day blocks (Supplementary Figure S5). A subsequent K-S test finds that the shift is significant with $p=0.003998$. During the Post-Meiyu (days 201-273), when a southward shift in rainband latitude is found in 1980-2001 relative to 1958-1979, the mean latitude of the jet is also consistently displaced southward. We assimilate daily mean jet latitude into 7-day blocks (Supplementary Figure S5) before performing a K-S test, and find a $p$-value of this shift of $p=0.05667$.
-		
-\section{Discussion}
-
-	The Meiyu front and tropospheric jet covary in latitude from May to September in the climatological mean, and parallel changes are found in rainband attributes and mean jet latitude between 1951-1979 and 1980-2007. Therefore, the South Flood-North Drought appears to reflect an alteration in jet dynamics. We propose that both the Pre-Meiyu decline in rainband frequency and the Post-Meiyu southward shift of rainband latitude result from a single phenomenon: an overall southward displacement of the jet's summer progression over East Asia. In climatology, the Pre-Meiyu corresponds to both a surge in rainfall and the beginning of the jet's northward transit, when its preferred latitude begins to impinge on the Tibetan Plateau. We propose that the observed southward shift in the jet during May has delayed the date when the jet first impinges on the Tibetan Plateau, resulting in a delay in Pre-Meiyu onset and prolonged Spring Rain conditions. This is manifested as weaker rainfall and decreased rainband frequency in central China in May. Subsequently, we argue that the reduced northward extent of the jet during the Post-Meiyu has shifted rainfall and mean rainband latitude southward. Finally, we suggest that the southward displacement of the summer jet cycle results in a decrease in northern China annual rainfall and an increase in central China annual rainfall, producing a South Flood-North Drought response. Thus, our hypothesis can explain the major observed changes in rainfall and rainband statistics during the Pre- and Post-Meiyu as well as cumulative yearly change.
-	
-	To test our hypothesis, we investigate the relation of interannual anomalies in jet latitude and rainband properties. Figure \ref{jet_seasonal}b shows a scatter plot of rainband \textit{frequency} anomalies versus jet latitude anomalies in May (days 121-150). Most years with a decrease in rainband frequency feature a southward jet shift, and vice-versa, and such years occur mostly during 1980-2007. A similar relation is found between monthly anomalies in rainband \textit{latitude} and jet latitude during July-August (days 201-260, Figure \ref{jet_seasonal}c). In the latter figure, we exclude rainbands south of 28\textdegree N from calculated anomalies, since such rainbands reflect South China Sea storms, rather than jet influence \citep{Day2015}. Together, Figures \ref{jet_seasonal}b and \ref{jet_seasonal}c suggest that interannual changes in jet latitude affect Pre-Meiyu rainband frequency and Post-Meiyu rainband latitude.
-
-	 Observations show that the global annual mean latitude of the tropospheric jet has shifted poleward, in tandem with tropospheric heating and lower-stratospheric cooling in the mid-latitudes, increased subtropical static stability, and the expansion of the Hadley circulation \citep{Fu2006,Archer2008,Fu2011}. Opposite trends are found in some regions and the variation by season is significant; we find that the East Asian portion of the jet has shifted equatorward, in agreement with past studies \citep{Yu2007, Archer2008}. Recent work proposes that the observed southward displacement of the jet over the Pacific Ocean was caused by \nth{20}-century changes in tropical Pacific convection and SST \citep{Park2014a}. Thus, the global poleward trend in jet latitude and the East Asian equatorward shift are compatible observations that reflect the heterogeneous spatial distribution of \nth{20}-century warming.
-	 
-	 In addition to the late 1970s change in China rainfall, earlier onset of rainfall over the South China Sea during 1994-2008 relative to 1979-1993 has been reported \citep{Kajikawa2012}, as well as an increase in rainfall over southern China and in the passage of tropical cyclones \citep{Kwon2007,Chang2014}. In Supplementary Tables S7 and S8, we find a rise in rainband intensity during Meiyu season (days 161-200) from 27.3 to 29.8 mm day$^{-1}$ ($p=.9994$), and a southward shift in rainband latitude from 30.0\textdegree N to 28.9\textdegree\ N ($p=.0002$). No significant changes are found in rainband frequency or jet latitude. The strengthening and southward shift of Meiyu season rainbands beginning in the mid-1990s merits further investigation.
-		
+	 In addition to the late 1970s change in China rainfall, earlier onset of rainfall over the South China Sea during 1994-2008 relative to 1979-1993 has been reported \citep{Kajikawa2012}, as well as an increase in rainfall over southern China and in the passage of tropical cyclones \citep{Kwon2007,Chang2014}. In Supplementary Tables S7 and S8, we find a rise in rainband intensity during Meiyu season (days 161-200) from 27.3 to 29.8 mm day$^{-1}$ ($p=.9994$), and a southward shift in rainband latitude from 30.0\textdegree N to 28.9\textdegree\ N ($p=.0002$). No significant changes are found in rainband frequency or jet latitude. The strengthening and southward shift of Meiyu season rainbands beginning in the mid-1990s merits further investigation. Our algorithm reveals its usefulness by isolating specific changes in rainband behavior that would not be distinguishable simply by looking at cumulative monthly rainfall.
+			 				
 \section{Conclusion}
 
-	We have shown that a significant amount of the annual and decadal variability in Meiyu front activity is accompanied by changes in the westerly jet. Using a recursive convergent image processing algorithm, we created an unprecedented database and 57-year climatology of frontal rainfall properties over China, including probability of rainband occurrence and mean latitude, intensity, tilt, width and length. Two statistically significant changes in rainband attributes occurred between the years 1951-1979 and 1980-2007: 1) A decrease in frequency during the Pre-Meiyu season (days 121-160, May 1-June 9; $p=.020$); and 2) A southward shift in latitude of rainbands during the Post-Meiyu season (days 201-273, July 20-Sep 30; $p=.0003$). The latter change is responsible for the South Flood-North Drought trend in total yearly rainfall. In addition, both time periods display a southward anomaly in mean jet latitude during 1980-2007 relative to 1951-1979. We argue that both Pre-Meiyu and Post-Meiyu changes in rainfall and rainband statistics are caused by a southward shift of the summer progression of the East Asian tropospheric jet. In particular, we propose that the delayed passage of the jet to the north of the Tibetan Plateau has shortened the Pre-Meiyu season, decreasing May rainfall in central China, and restricted the northward advance of precipitation, consequently reducing Post-Meiyu rainfall in northern China. This interpretation is a modern analog of the ``Jet Transition Hypothesis'' described in \citet{Chiang2015}, wherein East Asian rainfall changes on paleoclimate timescales are ascribed to modulation in the seasonal cycle of the tropospheric jet. 	
- 
-	Many components of our results have been presented in previous work. \citet{Xuan2011} find a southward shift in the jet and increased Yangtze Valley rainfall in July. \citet{Yu2004} and \citet{Yu2007} found a southward shift in July-August jet latitude and suggested a link with the South Flood-North Drought. Potential mechanisms for late \nth{20}-century East Asian climate change include changes in Indian Ocean SST \citep{Qu2012}, decreased sensible heating from the Tibetan Plateau \citep{Liu2012a,Hu2015} and aerosol forcing \citep{Song2014}. Other studies attribute the South Flood-North Drought to natural variability \citep{Zhang1999,Xin2006,Lei2014}, but \citet{Zhou2009} claimed that the South Flood-North Drought was distinct from other patterns of \nth{20}-century variability. Our hypothesis, that the altered seasonal cycle of the jet induces observed rainfall change, does not supplant prior explanations but rather provides further observations that they must address.
+	Using a recursive convergent image processing algorithm, we created an unprecedented database and 57-year climatology of frontal rainfall properties over China, including probability of rainband occurrence and mean latitude, intensity, tilt, width and length. Two statistically significant changes in rainband attributes occurred between the years 1951-1979 and 1980-2007: 1) A decrease in frequency during the Pre-Meiyu season (days 121-160, May 1-June 9; $p=.020$); and 2) A southward shift in latitude of rainbands during the Post-Meiyu season (days 201-273, July 20-Sep 30; $p=.0003$). The latter change is responsible for the South Flood-North Drought trend in total yearly rainfall. During 1994-2007 versus 1979-1993, a substantially different change is found ... Our algorithm calculates X \% of total rainfall falling over China from 1951 to 2007. The development of the rainband detection algorithm allows us to study both frontal rainfall, which is associated with larger-scale variability, and local storms, which may result from meso-scale features such as low mountains, and the distinct changes in each. Each type of rainfall is separately available our data set.
 	 
-	It is essential to understand whether the South Flood-North Drought will persist under \nth{21}-century warming, or manifests an ephemeral decadal change. However, the CMIP5 (Climate Model Intercomparison Project) model suite contained in the Intergovernmental Panel on Climate Change's Fifth Assessment Report (IPCC AR5) does not agree on the sign of future summer rainfall changes in East Asia \citep{Christensen2011}. In this study, we have tied the regional rainfall climate of China to the seasonal progression of the westerly jet, which is a larger-scale feature and therefore more easily studied in global climate models and idealized studies. The poleward expansion of the Hadley Cell is projected to continue under \nth{21}-century warming \citep{Lu2007,Kang2012}, but a recent study predicts that anomalous \nth{21}-century heating of the eastern Pacific Ocean will drive the Pacific jet further equatorward \citep{Park2014}. By linking the South Flood-North Drought to changes in the seasonal advance of the tropospheric jet, we open the possibility of projecting \nth{21}-century East Asian rainfall change by improving our understanding of the effect of further global warming on the regional and global behavior of the tropospheric jet.
+	It is essential to understand whether the South Flood-North Drought will persist under \nth{21}-century warming, or manifests an ephemeral decadal change. However, the CMIP5 (Climate Model Intercomparison Project) model suite contained in the Intergovernmental Panel on Climate Change's Fifth Assessment Report (IPCC AR5) does not agree on the sign of future summer rainfall changes in East Asia \citep{Christensen2011}. In this study, we have found robust changes in frontal rainfall. The poleward expansion of the Hadley Cell is projected to continue under \nth{21}-century warming \citep{Lu2007,Kang2012}, but a recent study predicts that anomalous \nth{21}-century heating of the eastern Pacific Ocean will drive the Pacific jet further equatorward \citep{Park2014}. By linking the South Flood-North Drought to changes in the seasonal advance of the tropospheric jet, we open the possibility of projecting \nth{21}-century East Asian rainfall change by improving our understanding of the effect of further global warming on the regional and global behavior of the tropospheric jet.
 	
+	Many components of our results have been presented in previous work. \citet{Xuan2011} find a southward shift in the jet and increased Yangtze Valley rainfall in July. \citet{Yu2004} and \citet{Yu2007} found a southward shift in July-August jet latitude and suggested a link with the South Flood-North Drought. Potential mechanisms for late \nth{20}-century East Asian climate change include changes in Indian Ocean SST \citep{Qu2012}, decreased sensible heating from the Tibetan Plateau \citep{Liu2012a,Hu2015} and aerosol forcing \citep{Song2014}. Other studies attribute the South Flood-North Drought to natural variability \citep{Zhang1999,Xin2006,Lei2014}, but \citet{Zhou2009} claimed that the South Flood-North Drought was distinct from other patterns of \nth{20}-century variability. 
+
 
 %%%  ACKNOWLEDGMENTS %%%
 
 \begin{acknowledgments}
-We thank Reinhardt Schiemann for sharing his database of jet counts. APHRODITE precipitation data is publicly available at \url{http://www.chikyu.ac.jp/precip/index.html}. Ferret, a NOAA product, was used for some data analysis and preliminary plot generation and is freely available at \url{http://ferret.pmel.noaa.gov/Ferret/}. The rainband detection algorithm and the majority of data analysis code were written in MATLAB. A full database of rainband statistics from 1 January 1951 to 31 December 2007 and associated MATLAB and Ferret codes used to produce results are available at the author's website: \url{http://www.atmos.berkeley.edu/~jessed/data.html}, and key figures are reproduced at \url{http://www.atmos.berkeley.edu/~jessed/myfigures.html}. This work was supported by NSF grants AGS-1405479, EAR-0909195 and EAR-1211925, which allowed the presentation of preliminary results in conference settings and the feedback of our peers. We also acknowledge NSFC (National Natural Science Foundation of China) grant \#40921120406 for enabling our collaboration with Professor Yanjun Cai of IEECAS in Xi'an, which led to the present work. We thank Gerard Roe for a valuable comment on the poleward global shift of jet latitude. 
-\end{acknowledgments}
+APHRODITE precipitation data is publicly available at \url{http://www.chikyu.ac.jp/precip/index.html}. Ferret, a NOAA product, was used for some data analysis and preliminary plot generation and is freely available at \url{http://ferret.pmel.noaa.gov/Ferret/}. The rainband detection algorithm and the majority of data analysis code were written in MATLAB. A full database of rainband statistics from 1 January 1951 to 31 December 2007 and associated MATLAB and Ferret codes used to produce results are available at the author's website: \url{http://www.atmos.berkeley.edu/~jessed/data.html}, and key figures are reproduced at \url{http://www.atmos.berkeley.edu/~jessed/myfigures.html}. This work was supported by NSF grants EAR-0909195 and EAR-1211925, which allowed the presentation of preliminary results in conference settings and the feedback of our peers. We also acknowledge NSFC (National Natural Science Foundation of China) grant \#40921120406 for enabling our collaboration with Professor Yanjun Cai of IEECAS in Xi'an, which led to the present work. We thank Jinqiang Chen and an anonymous reviewer for valuable suggestions for a prior version of the present manuscript. \end{acknowledgments}
 
 %%% BIBLIOGRAPHY %%%
 
-%\bibliographystyle{agufull08}
-%\bibliography{meiyu}
-
-\begin{thebibliography}{61}
-\providecommand{\natexlab}[1]{#1}
-\expandafter\ifx\csname urlstyle\endcsname\relax
-  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
-  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
-  \urlstyle{rm}\Url}\fi
-
-\bibitem[{\textit{Ambrizzi and Hoskins}(1997)}]{Ambrizzi1997}
-Ambrizzi, T., and B.~J. Hoskins (1997), {Stationary Rossby-€wave propagation
-  in a baroclinic atmosphere}, \textit{Q. J. R. Meteorol. Soc.}, \textit{123},
-  919--928.
-
-\bibitem[{\textit{Archer and Caldeira}(2008)}]{Archer2008}
-Archer, C.~L., and K.~Caldeira (2008), {Historical trends in the jet streams},
-  \textit{Geophys. Res. Lett.}, \textit{35}, L08,803,
-  \doi{10.1029/2008GL033614}.
-
-\bibitem[{\textit{Bordoni and Schneider}(2008)}]{Bordoni2008}
-Bordoni, S., and T.~Schneider (2008), {Monsoons as eddy-mediated regime
-  transitions of the tropical overturning circulation}, \textit{Nat. Geosci.},
-  \textit{1}, 515--519, \doi{10.1038/ngeo248}.
-
-\bibitem[{\textit{Broccoli and Manabe}(1992)}]{Broccoli1992}
-Broccoli, A.~J., and S.~Manabe (1992), {The Effects of Orography on Midlatitude
-  Northern Hemisphere Dry Climates}, \textit{J. Clim.}, \textit{5}, 1181--1201.
-
-\bibitem[{\textit{Chang et~al.}(2014)\textit{Chang, Yeh, Hong, Kim, Wu, and
-  Kei}}]{Chang2014}
-Chang, E.-C., S.-W. Yeh, S.-Y. Hong, J.-E. Kim, R.~Wu, and Y.~Kei (2014),
-  {Study on the changes in the East Asian precipitation in the mid€-1990s using
-  a high€-resolution global downscaled atmospheric data set}, \textit{J.
-  Geophys. Res. Atmos.}, \textit{119}, 2279--2293, \doi{10.1002/2013JD020903}.
-
-\bibitem[{\textit{Chen}(2004)}]{Chen2004}
-Chen, G. T.-J. (2004), {Research on the phenomena of Meiyu during the past
-  quarter century: An overview}, in \textit{East Asian Monsoon}, edited by
-  C.-P. Chang, pp. 357--403, World Scientific, Singapore.
-
-\bibitem[{\textit{Chen and Bordoni}(2014)}]{Chen2014}
-Chen, J., and S.~Bordoni (2014), {Orographic Effects of the Tibetan Plateau on
-  the East Asian Summer Monsoon: An Energetic Perspective}, \textit{J. Clim.},
-  \textit{27}, 3052--3072, \doi{10.1175/JCLI-D-13-00479.1}.
-
-\bibitem[{\textit{Chiang et~al.}(2015)\textit{Chiang, Fung, Wu, Cai, Edman,
-  Liu, Day, Bhattacharya, Mondal, and Labrousse}}]{Chiang2015}
-Chiang, J.~C., I.~Y. Fung, C.-H. Wu, Y.~Cai, J.~P. Edman, Y.~Liu, J.~A. Day,
-  T.~Bhattacharya, Y.~Mondal, and C.~A. Labrousse (2015), {Role of seasonal
-  transitions and westerly jets in East Asian paleoclimate}, \textit{Quat. Sci.
-  Rev.}, \textit{108}, 111--129, \doi{10.1016/j.quascirev.2014.11.009}.
-
-\bibitem[{\textit{Christensen et~al.}(2011)\textit{Christensen, {Krishna
-  Kumar}, Aldrian, An, Cavalcanti, de~Castro, Dong, Goswami, Hall, Kanyanga,
-  Kitoh, Kossin, Lau, Renwick, Stephenson, Xie, and Zhou}}]{Christensen2011}
-Christensen, J.~H., K.~{Krishna Kumar}, E.~Aldrian, S.-I. An, I.~F.~A.
-  Cavalcanti, M.~de~Castro, W.~Dong, P.~Goswami, A.~Hall, J.~K. Kanyanga,
-  A.~Kitoh, J.~Kossin, N.-C. Lau, J.~Renwick, D.~B. Stephenson, S.-P. Xie, and
-  T.~Zhou (2011), {Climate Phenomena and their Relevance for Future Regional
-  Climate Change}, in \textit{Climate Change 2013: The Physical Science Basis.
-  Contribution of Working Group I to the Fifth Assessment Report of the
-  Intergovernmental Panel on Climate Change}, edited by T.~F. Stocker, D.~Qin,
-  G.-K. Plattner, M.~Tignor, S.~K. Allen, J.~Boschung, A.~Nauels, Y.~Xia,
-  V.~Bex, and P.~M. Midgley, Cambridge University Press, Cambridge, United
-  Kingdom and New York, NY, USA.
-
-\bibitem[{\textit{Day et~al.}(2015)\textit{Day, Fung, and Risi}}]{Day2015}
-Day, J.~A., I.~Fung, and C.~Risi (2015), {Coupling of South and East Asian
-  Monsoon Precipitation in July-August}, \textit{J. Clim.},
-  \doi{10.1175/JCLI-D-14-00393.1}.
-
-\bibitem[{\textit{Ding and Chan}(2005)}]{Ding2005}
-Ding, Y., and J.~C.~L. Chan (2005), {The East Asian summer monsoon: an
-  overview}, \textit{Meteorol. Atmos. Phys.}, \textit{89}, 117--142,
-  \doi{10.1007/s00703-005-0125-z}.
-
-\bibitem[{\textit{Du et~al.}(2009)\textit{Du, Zhang, and Xie}}]{Du2009}
-Du, Y., Y.~Zhang, and Z.~Xie (2009), {Impacts of the Zonal Position of the East
-  Asian Westerly Jet Core on Precipitation Distribution During Meiyu of China},
-  \textit{Acta Meteorol. Sin.}, \textit{23}, 506--516.
-
-\bibitem[{\textit{Fu and Lin}(2011)}]{Fu2011}
-Fu, Q., and P.~Lin (2011), {Poleward shift of subtropical jets inferred from
-  satellite-observed lower-stratospheric temperatures}, \textit{J. Clim.},
-  \textit{24}, 5597--5603, \doi{10.1175/JCLI-D-11-00027.1}.
-
-\bibitem[{\textit{Fu et~al.}(2006)\textit{Fu, Johanson, Wallace, and
-  Reichler}}]{Fu2006}
-Fu, Q., C.~Johanson, J.~Wallace, and T.~Reichler (2006), {Enhanced mid-latitude
-  tropospheric warming in satellite measurements}, \textit{Science},
-  \textit{312}, 1179.
-
-\bibitem[{\textit{Ge et~al.}(2008)\textit{Ge, Guo, Zheng, and Hao}}]{Ge2008}
-Ge, Q., X.~Guo, J.~Zheng, and Z.~Hao (2008), {Meiyu in the middle and lower
-  reaches of the Yangtze River since 1736}, \textit{Chinese Sci. Bull.},
-  \textit{53}, 107--114, \doi{10.1007/s11434-007-0440-5}.
-
-\bibitem[{\textit{Gong and Ho}(2002)}]{Gong2002}
-Gong, D.-Y., and C.-H. Ho (2002), {Shift in the summer rainfall over the
-  Yangtze River valley in the late 1970s}, \textit{Geophys. Res. Lett.},
-  \textit{29}, 1436, \doi{10.1029/2001GL014523}.
-
-\bibitem[{\textit{Good}(2005)}]{Good2005}
-Good, P. (2005), \textit{{Permutation, parametric and bootstrap tests of
-  hypotheses}}, 3rd ed., Springer, New York, NY.
-
-\bibitem[{\textit{Hahn and Manabe}(1975)}]{Hahn1975}
-Hahn, D.~G., and S.~Manabe (1975), {The role of mountains in the south Asian
-  monsoon circulation}, \textit{J. Atmos. Sci.}, \textit{32}.
-
-\bibitem[{\textit{Holton}(2004)}]{Holton2004}
-Holton, J.~R. (2004), \textit{{An Introduction to Dynamic Meteorology}}, 4th
-  ed., 269--278 pp., Academic Press.
-
-\bibitem[{\textit{Hoskins and Ambrizzi}(1993)}]{Hoskins1993}
-Hoskins, B.~J., and T.~Ambrizzi (1993), {Rossby Wave Propagation on a Realistic
-  Longitudinally Varying Flow}, \textit{J. Atmos. Sci.}, \textit{50},
-  1661--1671.
-
-\bibitem[{\textit{Hu and Duan}(2015)}]{Hu2015}
-Hu, J., and A.~Duan (2015), {Relative contributions of the Tibetan Plateau
-  thermal forcing and the Indian Ocean Sea surface temperature basin mode to
-  the interannual variability of the East Asian summer monsoon}, \textit{Clim.
-  Dyn.}, \doi{10.1007/s00382-015-2503-7}.
-
-\bibitem[{\textit{Hu}(1997)}]{Hu1997}
-Hu, Z.-Z. (1997), {Interdecadal variability of summer climate over East Asia
-  and its association with 500 hPa height and global sea surface temperature},
-  \textit{J. Geophys. Res.}, \textit{102}, 19,403, \doi{10.1029/97JD01052}.
-
-\bibitem[{\textit{Kajikawa and Wang}(2012)}]{Kajikawa2012}
-Kajikawa, Y., and B.~Wang (2012), {Interdecadal Change of the South China Sea
-  Summer Monsoon Onset}, \textit{J. Clim.}, \textit{25}, 3207--3218,
-  \doi{10.1175/JCLI-D-11-00207.1}.
-
-\bibitem[{\textit{Kang and Lu}(2012)}]{Kang2012}
-Kang, S.~M., and J.~Lu (2012), {Expansion of the Hadley Cell under Global
-  Warming: Winter versus Summer}, \textit{J. Clim.}, \textit{25}, 8387--8393,
-  \doi{10.1175/JCLI-D-12-00323.1}.
-
-\bibitem[{\textit{Kosaka et~al.}(2011)\textit{Kosaka, Xie, and
-  Nakamura}}]{Kosaka2011}
-Kosaka, Y., S.-P. Xie, and H.~Nakamura (2011), {Dynamics of Interannual
-  Variability in Summer Precipitation over East Asia}, \textit{J. Clim.},
-  \textit{24}, 5435--5453, \doi{10.1175/2011JCLI4099.1}.
-
-\bibitem[{\textit{Kosaka et~al.}(2012)\textit{Kosaka, Chowdary, Xie, Min, and
-  Lee}}]{Kosaka2012}
-Kosaka, Y., J.~S. Chowdary, S.-P. Xie, Y.-M. Min, and J.-Y. Lee (2012),
-  {Limitations of Seasonal Predictability for Summer Climate over East Asia and
-  the Northwestern Pacific}, \textit{J. Clim.}, \textit{25}, 7574--7589,
-  \doi{10.1175/JCLI-D-12-00009.1}.
-
-\bibitem[{\textit{Kwon et~al.}(2007)\textit{Kwon, Jhun, and Ha}}]{Kwon2007}
-Kwon, M., J.-G. Jhun, and K.-J. Ha (2007), {Decadal change in east Asian summer
-  monsoon circulation in the mid-1990s}, \textit{Geophys. Res. Lett.},
-  \textit{34}, L21,706, \doi{10.1029/2007GL031977}.
-
-\bibitem[{\textit{Lei et~al.}(2014)\textit{Lei, Hoskins, and Slingo}}]{Lei2014}
-Lei, Y., B.~Hoskins, and J.~Slingo (2014), {Natural variability of summer
-  rainfall over China in HadCM3}, \textit{Clim. Dyn.}, \textit{42}, 417--432,
-  \doi{10.1007/s00382-013-1726-8}.
-
-\bibitem[{\textit{Li and Zhang}(2014)}]{Li2014}
-Li, L., and Y.~Zhang (2014), {Effects of Different Configurations of the East
-  Asian Subtropical and Polar Front Jets on Precipitation during the Mei-Yu
-  Season}, \textit{J. Clim.}, \textit{27}, 6660--6672,
-  \doi{10.1175/JCLI-D-14-00021.1}.
-
-\bibitem[{\textit{Liang and Wang}(1998)}]{Liang1998}
-Liang, X.-Z., and W.-C. Wang (1998), {Associations between China monsoon
-  rainfall and tropospheric jets}, \textit{Q. J. R. Meteorol. Soc.},
-  \textit{124}, 2597--2623.
-
-\bibitem[{\textit{Liu et~al.}(2012)\textit{Liu, Wu, Hong, Dong, Duan, Bao, and
-  Zhou}}]{Liu2012a}
-Liu, Y., G.~Wu, J.~Hong, B.~Dong, A.~Duan, Q.~Bao, and L.~Zhou (2012),
-  {Revisiting Asian monsoon formation and change associated with Tibetan
-  Plateau forcing: II. Change}, \textit{Clim. Dyn.}, \textit{39}, 1183--1195,
-  \doi{10.1007/s00382-012-1335-y}.
-
-\bibitem[{\textit{Lu et~al.}(2007)\textit{Lu, Vecchi, and Reichler}}]{Lu2007}
-Lu, J., G.~A. Vecchi, and T.~Reichler (2007), {Expansion of the Hadley cell
-  under global warming}, \textit{Geophys. Res. Lett.}, \textit{34}, L06,805,
-  \doi{10.1029/2006GL028443}.
-
-\bibitem[{\textit{Molnar et~al.}(2010)\textit{Molnar, Boos, and
-  Battisti}}]{Molnar2010}
-Molnar, P., W.~R. Boos, and D.~S. Battisti (2010), {Orographic Controls on
-  Climate and Paleoclimate of Asia: Thermal and Mechanical Roles for the
-  Tibetan Plateau}, \textit{Annu. Rev. Earth Planet. Sci.}, \textit{38},
-  77--102, \doi{10.1146/annurev-earth-040809-152456}.
-
-\bibitem[{\textit{Nagashima et~al.}(2011)\textit{Nagashima, Tada, Tani, Sun,
-  Isozaki, Toyoda, and Hasegawa}}]{Nagashima2011}
-Nagashima, K., R.~Tada, A.~Tani, Y.~Sun, Y.~Isozaki, S.~Toyoda, and H.~Hasegawa
-  (2011), {Millennial-scale oscillations of the westerly jet path during the
-  last glacial period}, \textit{J. Asian Earth Sci.}, \textit{40}, 1214--1220,
-  \doi{10.1016/j.jseaes.2010.08.010}.
-
-\bibitem[{\textit{Nagashima et~al.}(2013)\textit{Nagashima, Tada, and
-  Toyoda}}]{Nagashima2013}
-Nagashima, K., R.~Tada, and S.~Toyoda (2013), {Westerly jet-East Asian summer
-  monsoon connection during the Holocene}, \textit{Geochemistry, Geophys.
-  Geosystems}, \textit{14}, 5041--5053, \doi{10.1002/2013GC004931}.
-
-\bibitem[{\textit{Nigam and Lindzen}(1989)}]{Nigam1989}
-Nigam, S., and R.~S. Lindzen (1989), {The sensitivity of stationary waves to
-  variations in the basic state zonal flow}, \textit{J. Atmos. Sci.},
-  \textit{46}, 1746--1768.
-
-\bibitem[{\textit{Nigam et~al.}(2013)\textit{Nigam, Zhao, and
-  Zhou}}]{Nigam2013}
-Nigam, S., Y.~Zhao, and T.~Zhou (2013), {The south-flood north-drought pattern
-  over Eastern China and the drying of the Gangetic Plain}, in \textit{Climate
-  Change: Multidecadal and Beyond}, vol.~1, edited by M.~W. {Michael Ghil,
-  Mojif Latif} and C.~Chan, World Press.
-
-\bibitem[{\textit{Park and Schubert}(1997)}]{Park1997}
-Park, C.-K., and S.~D. Schubert (1997), {On the nature of the 1994 East Asian
-  summer drought}, \textit{J. Clim.}, \textit{10}, 1056--1070.
-
-\bibitem[{\textit{Park and An}(2014{\natexlab{a}})}]{Park2014a}
-Park, J.-H., and S.-I. An (2014{\natexlab{a}}), {The impact of tropical western
-  Pacific convection on the North Pacific atmospheric circulation during the
-  boreal winter}, \textit{Clim. Dyn.}, \textit{43}, 2227--2238,
-  \doi{10.1007/s00382-013-2047-7}.
-
-\bibitem[{\textit{Park and An}(2014{\natexlab{b}})}]{Park2014}
-Park, J.-H., and S.-I. An (2014{\natexlab{b}}), {Southward displacement of the
-  upper atmosphere zonal Jet in the eastern north Pacific due to global
-  warming}, \textit{Geophys. Res. Lett.}, \textit{41}, 7861--7867,
-  \doi{10.1002/2014GL062175}.
-
-\bibitem[{\textit{Plumb and Hou}(1992)}]{Plumb1992}
-Plumb, R.~A., and A.~Y. Hou (1992), {Response of a Zonally Symmetric Atmosphere
-  to Subtropical Thermal Forcing}, \textit{J. Atmos. Sci.}, \textit{49},
-  1790--1799.
-
-\bibitem[{\textit{Priv\'{e} and Plumb}(2007)}]{Prive2007}
-Priv\'{e}, N.~C., and R.~A. Plumb (2007), {Monsoon Dynamics with Interactive
-  Forcing. Part I: Axisymmetric Studies}, \textit{J. Atmos. Sci.}, \textit{64},
-  1417--1430, \doi{10.1175/JAS3916.1}.
-
-\bibitem[{\textit{Qu and Huang}(2012)}]{Qu2012}
-Qu, X., and G.~Huang (2012), {Impacts of tropical Indian Ocean SST on the
-  meridional displacement of East Asian jet in boreal summer}, \textit{Int. J.
-  Climatol.}, \textit{32}, 2073--2080, \doi{10.1002/joc.2378}.
-
-\bibitem[{\textit{Sampe and Xie}(2010)}]{Sampe2010}
-Sampe, T., and S.-P. Xie (2010), {Large-Scale Dynamics of the Meiyu-Baiu
-  Rainband: Environmental Forcing by the Westerly Jet}, \textit{J. Clim.},
-  \textit{23}, 113--134, \doi{10.1175/2009JCLI3128.1}.
-
-\bibitem[{\textit{Schiemann et~al.}(2009)\textit{Schiemann, L\"{u}thi, and
-  Sch\"{a}r}}]{Schiemann2009}
-Schiemann, R., D.~L\"{u}thi, and C.~Sch\"{a}r (2009), {Seasonality and
-  Interannual Variability of the Westerly Jet in the Tibetan Plateau Region},
-  \textit{J. Clim.}, \textit{22}, 2940--2957, \doi{10.1175/2008JCLI2625.1}.
-
-\bibitem[{\textit{Song et~al.}(2014)\textit{Song, Zhou, and Qian}}]{Song2014}
-Song, F., T.~Zhou, and Y.~Qian (2014), {Responses of East Asian summer monsoon
-  to natural and anthropogenic forcings in the 17 latest CMIP5 models},
-  \textit{Geophys. Res. Lett.}, \textit{41}, 596--603,
-  \doi{10.1002/2013GL058705.Received}.
-
-\bibitem[{\textit{Tian and Yasunari}(1998)}]{Tian1998}
-Tian, S.-F., and T.~Yasunari (1998), {Climatological Aspects and Mechanism of
-  Spring Persistent Rains over Central China}, \textit{J. Meteorol. Soc.
-  Japan}, \textit{76}, 57--71.
-
-\bibitem[{\textit{Wang and LinHo}(2002)}]{Wang2002}
-Wang, B., and LinHo (2002), {Rainy Season of the Asian-Pacific Summer Monsoon},
-  \textit{J. Climate}, \textit{15}, 386--398.
-
-\bibitem[{\textit{Wang et~al.}(2009)\textit{Wang, Huang, Wu, Yang, Fu, and
-  Kikuchi}}]{Wang2009}
-Wang, B., F.~Huang, Z.~Wu, J.~Yang, X.~Fu, and K.~Kikuchi (2009), {Multi-scale
-  climate variability of the South China Sea monsoon: A review}, \textit{Dyn.
-  Atmos. Ocean.}, \textit{47}, 15--37, \doi{10.1016/j.dynatmoce.2008.09.004}.
-
-\bibitem[{\textit{Xin et~al.}(2006)\textit{Xin, Yu, Zhou, and Wang}}]{Xin2006}
-Xin, X., R.~Yu, T.~Zhou, and B.~Wang (2006), {Drought in late spring of South
-  China in recent decades}, \textit{J. Clim.}, \textit{19}, 3197--3206,
-  \doi{10.1175/JCLI3794.1}.
-
-\bibitem[{\textit{Xu et~al.}(2009)\textit{Xu, Zipser, and Liu}}]{Xu2009}
-Xu, W., E.~J. Zipser, and C.~Liu (2009), {Rainfall Characteristics and
-  Convective Properties of Mei-Yu Precipitation Systems over South China,
-  Taiwan, and the South China Sea. Part I: TRMM Observations}, \textit{Mon.
-  Weather Rev.}, \textit{137}, 4261--4275, \doi{10.1175/2009MWR2982.1}.
-
-\bibitem[{\textit{Xuan et~al.}(2011)\textit{Xuan, Zhang, and Sun}}]{Xuan2011}
-Xuan, S., Q.~Zhang, and S.~Sun (2011), {Anomalous midsummer rainfall in Yangtze
-  River-Huaihe River valleys and its association with the East Asia westerly
-  jet}, \textit{Adv. Atmos. Sci.}, \textit{28}, 387--397,
-  \doi{10.1007/s00376-010-0111-3}.
-
-\bibitem[{\textit{Yang et~al.}(2002)\textit{Yang, Lau, and Kim}}]{Yang2002}
-Yang, S., K.~Lau, and K.~Kim (2002), {Variations of the East Asian Jet Stream
-  and Asian-€“Pacific-€“American Winter Climate Anomalies.}, \textit{J. Clim.},
-  \textit{15}, 306--325.
-
-\bibitem[{\textit{Yatagai et~al.}(2012)\textit{Yatagai, Kamiguchi, Arakawa,
-  Hamada, Yasutomi, and Kitoh}}]{Yatagai2012}
-Yatagai, A., K.~Kamiguchi, O.~Arakawa, A.~Hamada, N.~Yasutomi, and A.~Kitoh
-  (2012), {APHRODITE: Constructing a Long-Term Daily Gridded Precipitation
-  Dataset for Asia Based on a Dense Network of Rain Gauges}, \textit{Bull. Am.
-  Meteorol. Soc.}, \textit{93}, 1401--1415, \doi{10.1175/BAMS-D-11-00122.1}.
-
-\bibitem[{\textit{Yeh et~al.}(1959)\textit{Yeh, Dao, and Li}}]{Yeh1959}
-Yeh, T.-C., S.-Y. Dao, and M.-T. Li (1959), {The Abrupt Change of Circulation
-  over the Northern Hemisphere during June and October}, in \textit{The
-  Atmosphere and the Sea in Motion}, edited by B.~Bolin, pp. 249--267,
-  Rockefeller Institute Press.
-
-\bibitem[{\textit{Yin}(1949)}]{Yin1949}
-Yin, M.~T. (1949), {Synoptic-aerologic study of the onset of the summer monsoon
-  over India and Burma}, \textit{J. Meteorol.}, \textit{6}, 393--400.
-
-\bibitem[{\textit{Yu and Zhou}(2007)}]{Yu2007}
-Yu, R., and T.~Zhou (2007), {Seasonality and Three-Dimensional Structure of
-  Interdecadal Change in the East Asian Monsoon}, \textit{J. Clim.},
-  \textit{20}, 5344--5355, \doi{10.1175/2007JCLI1559.1}.
-
-\bibitem[{\textit{Yu et~al.}(2004)\textit{Yu, Wang, and Zhou}}]{Yu2004}
-Yu, R., B.~Wang, and T.~Zhou (2004), {Tropospheric cooling and summer monsoon
-  weakening trend over East Asia}, \textit{Geophys. Res. Lett.}, \textit{31},
-  L22,212, \doi{10.1029/2004GL021270}.
-
-\bibitem[{\textit{Yu et~al.}(2010)\textit{Yu, Li, Yuan, and Chen}}]{Yu2010}
-Yu, R., J.~Li, W.~Yuan, and H.~Chen (2010), {Changes in characteristics of
-  late-summer precipitation over eastern China in the past 40 years revealed by
-  hourly precipitation data}, \textit{J. Clim.}, \textit{23}, 3390--3396,
-  \doi{10.1175/2010JCLI3454.1}.
-
-\bibitem[{\textit{Zhang et~al.}(1999)\textit{Zhang, Sumi, and
-  Kimoto}}]{Zhang1999}
-Zhang, R., A.~Sumi, and M.~Kimoto (1999), {A Diagnostic Study of the Impact of
-  El Ni\~{n}o on the Precipitation in China}, \textit{Adv. Atmos. Sci.},
-  \textit{16}, 229--241.
-
-\bibitem[{\textit{Zhou et~al.}(2009)\textit{Zhou, Gong, Li, and Li}}]{Zhou2009}
-Zhou, T., D.~Gong, J.~Li, and B.~Li (2009), {Detecting and understanding the
-  multi-decadal variability of the East Asian Summer Monsoon - Recent progress
-  and state of affairs}, \textit{Meteorol. Zeitschrift}, \textit{18}, 455--467,
-  \doi{10.1127/0941-2948/2009/0396}.
-
-\end{thebibliography}
-
+\bibliographystyle{agufull08}
+\bibliography{meiyu}
 
 %% ------------------------------------------------------------------------ %%
 %
@@ -649,15 +319,6 @@ Zhou, T., D.~Gong, J.~Li, and B.~Li (2009), {Detecting and understanding the
 \noindent\includegraphics[width=36pc]{Figures/changes_2d}
 \caption{a) Whole year mean rainfall change, showing the South Flood-North Drought pattern; b) Rainfall changes during the Pre-Meiyu (days 121-160) with contours of jet density change overlain; c) Same as c, but for the Post-Meiyu (days 201-273). Statistical significance at 95\%/99\% level overlain with single/double hatches. Sidebars show, for each time period, the longitude average over 105-123$^{\circ}$E of changes in rainfall (thin blue line, units of mm day$^{-1}$), jet kernel density (red line, units of $10^{-4}$) and rainband position (dashed black line, absolute probability in \%, 1-degree latitude smoothing).}
 \label{changes_2d}
-\end{figure}
-
-%%% Changes in jet mean between 1951-1979 and 1980-2007 + scatter plots of jet and rainband monthly anomalies.
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=42pc]{Figures/jet}
-\caption{a) 7-day running mean latitude of the westerly jet in the region 90-130$^\circ$E for the years 1958-1979 (blue, solid) and 1980-2001 (red, dashed). Bootstrapped 95\% confidence intervals are shaded. Time periods: 2 - Pre-Meiyu; 3 - Meiyu; 4 - Post-Meiyu; b) Plot of monthly anomalies in rainband frequency versus monthly anomalies in jet latitude during days 121-150 (May) for 1958-1979 (blue X) versus 1980-2001 (red circle); c) Same as b), but showing 30-day anomalies of rainband latitudes during the Post-Meiyu (201-230 and 231-260, each set of 30 days treated as a separate point). Histograms of anomalies are also shown on the side of each figure.}
-\label{jet_seasonal}
-\end{center}
 \end{figure}
 
 \end{document}
