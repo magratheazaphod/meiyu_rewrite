@@ -1,0 +1,102 @@
+!my_rain_diff_sig.jnl
+
+!Written by Jesse Day, April 2nd 2015. Finds spatial maps of significance of the change in rainfall between time periods by bootstrapping with replacement.
+
+set memory/size=1200
+
+set data APHRO_MA_025deg.nc
+define axis/T=1-jan-1951:31-dec-2007:1/UNITS=years/EDGES allyr
+
+let P_year=PRECIP[GT=allyr@AVE]
+
+!pre-meiyu and post-meiyu masks
+let myd=mod(t[gt=PRECIP],365.2425)
+let mask1=if myd gt 120 then 1
+let mask2=if myd lt 160 then 1
+let mask3=mask1*mask2
+
+let P_prem=PRECIP[X=100E:142E,Y=20N:48N]*mask3
+let P_prem_yr=P_prem[GT=allyr@AVE]
+
+let mask4=if myd gt 200 then 1
+let mask5=if myd lt 273 then 1
+let mask6=mask4*mask5
+
+let P_postm=PRECIP[X=100E:142E,Y=20N:48N]*mask6
+let P_postm_yr=P_postm[GT=allyr@AVE]
+
+save/file=APHRO_eastasia_yr.nc P_year,P_prem_yr,P_postm_yr
+
+
+set data a1.nc
+
+let mask_land_1=if a[L=@AVE,D=1] then 1 
+
+define axis/X=100E:142.125E/NPOINTS=168 xx
+define axis/Y=19.875N:48N/NPOINTS=112 yy
+let mask_land=mask_land_1
+
+set mode metafile
+cancel mode logo
+
+set data rain_changes_2d_sig_1.nc
+
+let mask1 = if pval_perm_full[GX=xx@ASN,GY=yy@ASN] gt .975 then 1 else 0
+let mask2 = if pval_perm_full[GX=xx@ASN,GY=yy@ASN] lt .025 then 1 else 0
+let mask3 = mask1 or mask2
+let mask4 = mask3*mask_land
+let mask5 = if mask4 eq 1 then 1
+
+list mask5[X=@SUM,Y=@SUM]
+SHADE mask5
+
+let mask6 = if pval_perm_full[GX=xx@ASN,GY=yy@ASN] gt .995 then 1 else 0
+let mask7 = if pval_perm_full[GX=xx@ASN,GY=yy@ASN] lt .005 then 1 else 0
+let mask8 = mask6 or mask7
+let mask9 = mask8*mask_land
+let mask10 = if mask9 eq 1 then 1
+
+list mask10[X=@SUM,Y=@SUM]
+SHADE mask10
+
+
+set data rain_changes_2d_sig_2.nc
+
+let mask1 = if pval_perm_prem[GX=xx@ASN,GY=yy@ASN] gt .975 then 1 else 0
+let mask2 = if pval_perm_prem[GX=xx@ASN,GY=yy@ASN] lt .025 then 1 else 0
+let mask3 = mask1 or mask2
+let mask4 = mask3*mask_land
+let mask5 = if mask4 eq 1 then 1
+
+list mask5[X=@SUM,Y=@SUM]
+SHADE mask5
+
+let mask6 = if pval_perm_prem[GX=xx@ASN,GY=yy@ASN] gt .995 then 1 else 0
+let mask7 = if pval_perm_prem[GX=xx@ASN,GY=yy@ASN] lt .005 then 1 else 0
+let mask8 = mask6 or mask7
+let mask9 = mask8*mask_land
+let mask10 = if mask9 eq 1 then 1
+
+list mask10[X=@SUM,Y=@SUM]
+SHADE mask10
+
+
+set data rain_changes_2d_sig_3.nc
+
+let mask1 = if pval_perm_postm[GX=xx@ASN,GY=yy@ASN] gt .975 then 1 else 0
+let mask2 = if pval_perm_postm[GX=xx@ASN,GY=yy@ASN] lt .025 then 1 else 0
+let mask3 = mask1 or mask2
+let mask4 = mask3*mask_land
+let mask5 = if mask4 eq 1 then 1
+
+list mask5[X=@SUM,Y=@SUM]
+SHADE mask5
+
+let mask6 = if pval_perm_postm[GX=xx@ASN,GY=yy@ASN] gt .995 then 1 else 0
+let mask7 = if pval_perm_postm[GX=xx@ASN,GY=yy@ASN] lt .005 then 1 else 0
+let mask8 = mask6 or mask7
+let mask9 = mask8*mask_land
+let mask10 = if mask9 eq 1 then 1
+
+list mask10[X=@SUM,Y=@SUM]
+SHADE mask10

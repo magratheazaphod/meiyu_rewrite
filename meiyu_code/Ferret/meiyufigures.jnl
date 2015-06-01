@@ -1,0 +1,467 @@
+!meiyufigures.jnl
+
+!Written by Jesse Day June 6th 2014, edited subsequently on February 18th, 2015
+
+
+!!! OLD VERSION - now have new ways of making these figures using updated files.
+
+!Contains the basic Ferret versions of all the figures eventually included in the 2015 Meiyu paper with Jake.
+
+!Figure 1 - Hovmoller diagram of Meiyu positions
+set mode metafile
+cancel mode logo
+
+set data meiyuhov.nc
+SHADE/PALETTE=blue_darkred latsmooth[X=3:27]
+
+!Figure 1b - Hovmoller diagram of Meiyu positions focusing on MJJAS (121-273)
+set window 2
+
+set mode metafile
+cancel mode logo
+
+set data meiyuhov.nc
+SHADE/PALETTE=blue_darkred latsmooth[X=3:27,L=121:273]
+
+!OVERLAY BOXES - highlighting different elements of rainfall climatology
+
+!BOX 1 - PRE-MEIYU
+let xp_1={8,8,14,14,8}
+let yp_1={121,151,151,121,121}
+!plot/over/vs/thick/line/color=black xp_1,yp_1
+
+!BOX 2 - MEIYU
+let xp_2={7,7,20,20,7}
+let yp_2={152,196,196,152,152}
+!plot/over/vs/thick/line/color=black xp_2,yp_2
+
+!BOX 3 - MEIYU-BREAKDOWN
+let xp_3={16,16,21,21,16}
+let yp_3={202,273,273,202,202}
+!plot/over/vs/thick/line/color=black xp_3,yp_3
+
+!BOX 4 - SOUTH CHINA CYCLONES
+let xp_4={7,11,11,7,7}
+let yp_4={202,202,243,243,202}
+!plot/over/vs/thick/line/color=black xp_4,yp_4
+
+REPEAT/RANGE=1:4/NAME=qq (plot/over/vs/thick/line/color=black xp_`qq`,yp_`qq`)
+
+!Figure 1c - full year plot, overlay boxes
+set window 3
+
+set mode metafile
+cancel mode logo
+
+set data meiyuhov.nc
+SHADE/PALETTE=blue_darkred latsmooth[X=3:27]
+REPEAT/RANGE=1:4/NAME=qq (plot/over/vs/thick/line/color=black xp_`qq`,yp_`qq`)
+
+
+!FIGURE 1B - latitude, intensity, tilt, frequency...
+
+!plots single line climatologies of key Meiyu variables. Overlays delineated time periods
+!two plots - full year and MJJAS
+
+set mode metafile
+cancel mode logo
+
+set data meiyuattribs_smooth.nc
+plot/vlimits=0:100 meanismeiyu
+plot/over (meanintens-10)*5
+
+!draw lines. 1) Pre-Meiyu - 121-151. 2) Meiyu - 152-196. 3) Meiyu Breakdown - 202-273.
+!4) Cyclone season - 202-243
+plot/over/vs/thick/line/color=black {120.5,120.5},{0,100}
+plot/over/vs/thick/line/color=black {151.5,151.5},{0,100}
+plot/over/vs/thick/line/color=black {196.5,196.5},{0,100}
+plot/over/vs/thick/line/color=black {201.5,201.5},{0,100}
+plot/over/vs/thick/line/color=black {243.5,243.5},{0,100}
+plot/over/vs/thick/line/color=black {273.5,273.5},{0,100}
+
+!MJJAS
+plot/hlimits=121:273/vlimits=0:100 meanismeiyu
+plot/over (meanintens-10)*5
+
+!draw lines. 1) Pre-Meiyu - 121-151. 2) Meiyu - 152-196. 3) Meiyu Breakdown - 202-273.
+!4) Cyclone season - 202-243
+plot/over/vs/thick/line/color=black {120.5,120.5},{0,100}
+plot/over/vs/thick/line/color=black {151.5,151.5},{0,100}
+plot/over/vs/thick/line/color=black {196.5,196.5},{0,100}
+plot/over/vs/thick/line/color=black {201.5,201.5},{0,100}
+plot/over/vs/thick/line/color=black {243.5,243.5},{0,100}
+plot/over/vs/thick/line/color=black {273.5,273.5},{0,100}
+
+!FIGURE 1C - Rainfall climatology - NEW VERSION of Ding & Chan 2005
+set mode metafile
+cancel mode logo
+
+set data meiyudingchan.nc
+SHADE/PALETTE=BLUE_DARKRED Psmth5
+CONTOUR/OVER/LEVELS=(2,10,2) Psmth5
+
+
+!!! NEW VERSIONS
+!makes four-panel figure of rainfall and Meiyu climatology for my 2015 Meiyu paper.
+!a) Hovmoller rainfall b) Hovmoller front frequency c) frequency and intensity d) ancillary values (secondary front and ... tilt?)
+
+!consensus on smoothing - 9-day running mean and 2-degree latitude filtering
+
+!Panel a - Hovmoller plot of rainfall over China
+!relies originally on the file Pchina.nc, which shows the mean rainfall over China for each day over the latitudes 20N-40N, averaged over the longitudes 100E:142E (which are also the longitudes used in the original Meiyu algorithm).
+
+set mode metafile
+cancel mode logo
+
+set data meiyuclimo_final_smooth_5day_0deg.nc
+
+SHADE/palette=blue_darkred/LEVELS=(0,12,.5) P
+CONTOUR/OVER/LEVELS=(2,10,2) P
+
+plot/over/vs/thick/line/color=black {120.5,120.5},{0,80}
+plot/over/vs/thick/line/color=black {161.5,151.5},{0,80}
+plot/over/vs/thick/line/color=black {196.5,196.5},{0,80}
+plot/over/vs/thick/line/color=black {201.5,201.5},{0,80}
+plot/over/vs/thick/line/color=black {243.5,243.5},{0,80}
+plot/over/vs/thick/line/color=black {273.5,273.5},{0,80}
+
+
+
+!Panel b - Hovmoller plot of front occupancy
+set mode metafile
+cancel mode logo
+
+set data meiyuclimo_final_smooth_9day_2deg.nc
+let h=HOV*100/57 !converts to a frequency
+
+set window 1
+SHADE/PALETTE=blue_darkred HOV
+
+set window 2
+SHADE/PALETTE=blue_darkred h
+
+
+!Panel c - plots of primary front frequency and intensity (mean)
+!9-day smoothing, like panel b
+
+set mode metafile
+cancel mode logo
+
+set data meiyuclimo_final_smooth_9day_2deg.nc
+
+set window 1
+plot/color=red/VLIMITS=14:32:2 avmean
+
+set window 2
+plot/color=blue/VLIMITS=0:80:10 freq1
+
+!Panel d - plots of secondary front frequency (ABSOLUTE), length, tilt and width.
+!9-day smoothing, like panel b.
+
+set mode metafile
+cancel mode logo
+
+set data meiyuclimo_final_smooth_9day_2deg.nc
+
+let f2=freq2/freq1*100
+
+set window 1
+plot/color=red/VLIMITS=0:28:2 f2
+
+set window 2
+plot/color=blue/VLIMITS=10:15:.5 len
+
+set window 3
+plot/color=green/VLIMITS=4:20:2 tilt
+
+set window 4
+plot/color=black/VLIMITS=2.6:3.8:.1 width
+
+
+!Figure 2 - Meiyu changes
+!a) Change in Meiyu rainfall between 1951-1979 and 1980-2007
+!b) Hovmoller plot of changes in frontal frequency
+
+!Figures saved as .eps and subsequently edited in illustrator. Two versions tested - 9-day running mean and 15-day running mean
+
+!also in subsequent versions will run change script from 1958-1979 v 1980-2001 (extent of jet database) and 1979-1993 v 1994-2007, for verification purposes.
+
+set mode metafile
+cancel mode logo
+
+!9-day version
+set data meiyu_diff_9day.nc
+
+set window 1
+SHADE/PALETTE=blue_darkred/LEVELS=(-3.2)(-2.8,2.8,.2)(3.2) P_DIFF_SMTH[D=1]
+
+set window 2
+
+let mask95_a=if pval_diff_1[D=1] lt .975 then 1 else 0
+let mask95_b=if pval_diff_1[D=1] gt .025 then 1 else 0
+let mask95_c=1-mask95_a*mask95_b
+let mask95=if mask95_c eq 1 then 1
+
+SHADE mask95
+
+set window 3
+
+let mask99_a=if pval_diff_1[D=1] lt .995 then 1 else 0
+let mask99_b=if pval_diff_1[D=1] gt .005 then 1 else 0
+let mask99_c=1-mask99_a*mask99_b
+let mask99=if mask99_c eq 1 then 1
+
+SHADE mask99
+
+
+!15-day version
+set data meiyu_diff_15day.nc
+
+set window 4
+SHADE/PALETTE=blue_darkred/LEVELS=(-1.9,1.8,.1)(2.3) P_DIFF_SMTH[D=2]
+
+set window 5
+let mask95_a=if pval_diff_1[D=2] lt .975 then 1 else 0
+let mask95_b=if pval_diff_1[D=2] gt .025 then 1 else 0
+let mask95_c=1-mask95_a*mask95_b
+let mask95=if mask95_c eq 1 then 1
+
+SHADE mask95
+
+set window 6
+let mask99_a=if pval_diff_1[D=2] lt .995 then 1 else 0
+let mask99_b=if pval_diff_1[D=2] gt .005 then 1 else 0
+let mask99_c=1-mask99_a*mask99_b
+let mask99=if mask99_c eq 1 then 1
+
+SHADE mask99
+
+
+!!! NEW April 6th 2015 - changed significance testing to 3 day moving blocks method.
+
+set mode metafile
+cancel mode logo
+
+!15-day version
+set data meiyu_diff_15day.nc
+
+set window 4
+!SHADE/PALETTE=blue_darkred/LEVELS=(-1.9,1.8,.1)(2.3) P_DIFF_SMTH[D=2]
+
+set window 5
+let mask95_a=if pval_diff_blocks_3[D=1] lt .975 then 1 else 0
+let mask95_b=if pval_diff_blocks_3[D=1] gt .025 then 1 else 0
+let mask95_c=1-mask95_a*mask95_b
+let mask95=if mask95_c eq 1 then 1
+
+SHADE mask95
+
+set window 6
+let mask99_a=if pval_diff_blocks_3[D=1] lt .995 then 1 else 0
+let mask99_b=if pval_diff_blocks_3[D=1] gt .005 then 1 else 0
+let mask99_c=1-mask99_a*mask99_b
+let mask99=if mask99_c eq 1 then 1
+
+SHADE mask99
+
+
+
+
+!3-day version
+set data meiyu_diff_3day.nc
+
+set window 4
+SHADE/LEVELS=(-6)(-4.25,4.25,.25)(5.5)/PALETTE=blue_darkred P_DIFF_SMTH[D=3]
+
+set window 5
+let mask95_a=if pval_diff_1[D=3] lt .975 then 1 else 0
+let mask95_b=if pval_diff_1[D=3] gt .025 then 1 else 0
+let mask95_c=1-mask95_a*mask95_b
+let mask95=if mask95_c eq 1 then 1
+
+SHADE mask95
+
+set window 6
+let mask99_a=if pval_diff_1[D=3] lt .995 then 1 else 0
+let mask99_b=if pval_diff_1[D=3] gt .005 then 1 else 0
+let mask99_c=1-mask99_a*mask99_b
+let mask99=if mask99_c eq 1 then 1
+
+SHADE mask99
+
+
+%% MEIYU CHANGES %%
+% after trying out a bunch of different smoothings, we settle on a 15-day running smoothing with 2-degree latitude smoothing.
+%note that we have changed the code to account for the autocorrelation time scale of front presence, which is found to be tau=1.81
+set mode metafile
+cancel mode logo
+
+%!9-day version
+%set data meiyu_fq_diff_15day_2deglat.nc
+
+%set window 1
+%SHADE/PALETTE=blue_darkred/LEVELS=(-4.4)(-2.6,2.8,.2) FQ_DIFF_SMTH[D=1]
+
+%set window 2
+
+%let mask95_a=if P[D=1] lt .975 then 1 else 0
+%let mask95_b=if P[D=1] gt .025 then 1 else 0
+%let mask95_c=1-mask95_a*mask95_b
+%let mask95=if mask95_c eq 1 then 1
+
+%SHADE mask95
+
+%set window 3
+
+%let mask99_a=if P[D=1] lt .995 then 1 else 0
+%let mask99_b=if P[D=1] gt .005 then 1 else 0
+%let mask99_c=1-mask99_a*mask99_b
+%let mask99=if mask99_c eq 1 then 1
+
+%SHADE mask99
+
+
+!15-day version
+set mode metafile
+cancel mode logo
+
+set data meiyu_fq_diff_15day_2deglat.nc
+
+set window 4
+SHADE/PALETTE=blue_darkred/LEVELS=(-3)(-2,2.2,.2) FQ_DIFF_SMTH
+
+set window 5
+let mask95_a=if P[D=1] lt .975 then 1 else 0
+let mask95_b=if P[D=1] gt .025 then 1 else 0
+let mask95_c=1-mask95_a*mask95_b
+let mask95=if mask95_c eq 1 then 1
+
+SHADE mask95
+
+set window 6
+let mask99_a=if P[D=1] lt .995 then 1 else 0
+let mask99_b=if P[D=1] gt .005 then 1 else 0
+let mask99_c=1-mask99_a*mask99_b
+let mask99=if mask99_c eq 1 then 1
+
+SHADE mask99
+
+
+!! PROVIDE CALENDAR DIVISIONS
+!we superimpose a certain set of time periods onto all of the figures in the paper...defined as follows:
+
+!1) Spring Rains, 60-120 
+!2) Pre-Meiyu, 121-160
+!3) Meiyu, 161-200
+!4) Post-Meiyu, 201-273
+!5) Fall Rains, 274-320
+
+set data meiyuclimo_final_smooth_5day_0deg.nc %arbitrary background pattern
+
+SHADE/palette=blue_darkred/LEVELS=(0,12,.5) P
+CONTOUR/OVER/LEVELS=(2,10,2) P
+
+
+
+plot/over/vs/thick/line/color=black {59.5,59.5},{0.5,80.5}
+plot/over/vs/thick/line/color=black {120.5,120.5},{0,80}
+plot/over/vs/thick/line/color=black {160.5,160.5},{0,80}
+plot/over/vs/thick/line/color=black {200.5,200.5},{0,80}
+plot/over/vs/thick/line/color=black {273.5,273.5},{0,80}
+plot/over/vs/thick/line/color=black {320.5,320.5},{0,80}
+
+
+
+!! FIGURE 0 - making plots of rainfall, jet and front climatology for different time periods of interest. as listed above:
+
+!1) Spring Rains, 60-120 
+!2) Pre-Meiyu, 121-160
+!3) Meiyu, 161-200
+!4) Post-Meiyu, 201-273
+!5) Fall Rains, 274-320
+!6) Post-Meiyu alt, 201-250
+
+!7) DIFFERENCE, 121-150 (1980-2007 v 1951-1979)
+!8) DIFFERENCE, 201-250 (1980-2007 v 1951-1979)
+
+
+go meiyu_climo_plot
+
+
+
+!! SUPPLEMENTARY FIGURES - plotting background precipitation maps for the series of supplementary figures demonstrating alogirthm functionality.
+
+!all representative days used are in 2007.
+
+!Figure 1a and 1b
+!a) Fit - 25 May 2007 (D=145)
+!b) no fit - 11 June 2007 (D=162)
+
+
+set mode metafile
+cancel mode logo
+
+set data APHRO_MA_025deg_V1101.2007.nc
+
+!spare line of code:
+REPEAT/RANGE=101:200/NAME=QQ (SHADE/PALETTE=blue_darkred/LEVELS=(0)(1)(5)(10,50,5)(100)(200) PRECIP[L=`QQ`,X=105.125E:122.875E,Y=20.125N:39.875N]; PAUSE)
+
+
+set window 1
+
+SHADE/PALETTE=blue_darkred/LEVELS=(0)(1)(5)(10,50,5)(100)(200) PRECIP[L=145,X=105E:123E,Y=20N:40N]
+
+set window 2
+
+SHADE/PALETTE=blue_darkred/LEVELS=(0)(1)(5)(10,50,5)(100)(200) PRECIP[L=162,X=105E:123E,Y=20N:40N]
+
+
+! Figure S2 showing convergent algorithm
+!Day used - D=119, 29 April 2007
+set window 3
+SHADE/PALETTE=blue_darkred/LEVELS=(0)(1)(5)(10,50,5)(100)(200) PRECIP[L=119,X=105E:123E,Y=20N:40N]
+
+!Figure S3 - show how the fitting of the secondary front works.
+!day used - D=141, 21 May 2007
+set window 4
+SHADE/PALETTE=blue_darkred/LEVELS=(0)(1)(5)(10,50,5)(100)(200) PRECIP[L=141,X=105E:123E,Y=20N:40N]
+
+set window 5
+set data P_2007_141.nc
+
+set mode metafile
+cancel mode logo
+SHADE/PALETTE=blue_darkred/LEVELS=(0)(1)(5)(10,50,5)(100)(200) P
+cancel data P_2007_141.nc
+set data APHRO_MA_025deg_V1101.2007.nc
+
+
+set data shadetemp.nc
+let q=SHADE
+let mask=if q gt 0 then 1
+SHADE mask
+
+
+!Figure S4 showing different quality scores
+!a) TW day  b) Q>.6  c) Q<.6  d) Q1>.6 and Q2>.6
+
+set mode metafile
+cancel mode logo
+
+set data APHRO_MA_025deg_V1101.2007.nc
+
+!a) L=230; August 18 2007 (Typhoon Sepat)
+set window 1
+SHADE/PALETTE=blue_darkred/LEVELS=(0)(1)(5)(10,50,5)(100)(252) PRECIP[L=230,X=105E:123E,Y=20N:40N]
+
+!b) L=155; 4 June 2007; Q=.80
+set window 2
+SHADE/PALETTE=blue_darkred/LEVELS=(0)(1)(5)(10,50,5)(100)(252) PRECIP[L=155,X=105E:123E,Y=20N:40N]
+
+!c) L=107; 17 April 2007; Q=.53
+set window 3
+SHADE/PALETTE=blue_darkred/LEVELS=(0)(1)(5)(10,50,5)(100)(252) PRECIP[L=107,X=105E:123E,Y=20N:40N]
+
+!d) L=141, no need to reprint since already shown above.
+
+

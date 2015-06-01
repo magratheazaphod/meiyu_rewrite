@@ -1,0 +1,108 @@
+!meiyu_climo_sidebar.jnl
+
+!written by Jesse Day March 4th 2015 to provide little sidebars to Figure 2 of the Meiyu paper.
+
+set mode metafile
+cancel mode logo
+
+let xmin=105;
+let xmax=123;
+let yplotmin=20;
+let yplotmax=48;
+
+define axis/Y=20N:40N:1/EDGES yphys
+
+set data meiyuclimo_final_smooth_9day_1deg.nc
+set data APHRO_025deg_mean.nc
+set data composites.nc
+
+set window 1
+let d1=60
+let d2=120
+let h1=HOV[L=`d1`:`d2`@AVE,D=1]*100/57;
+let rain=Pmean[X=`xmin`:`xmax`@AVE,Y=`yplotmin`:`yplotmax`,L=`d1`:`d2`@AVE,D=2]
+let rainmax=rain[Y=@MAX]
+let h2=h1[GY=yphys@ASN]
+let h=h2*rainmax/h2[Y=@MAX]
+let jet1=SPRING[X=100E:130E@AVE,D=3,Y=`yplotmin`:`yplotmax`];
+let jet=jet1*rainmax/jet1[Y=@MAX]
+
+plot jet
+plot/over h
+plot/color=4/over rain
+
+list jet1[Y=@MAX]
+list h1[Y=@MAX]
+
+
+set window 2
+let d1=121
+let d2=160
+let h1=HOV[L=`d1`:`d2`@AVE,D=1]*100/57;
+let rain=Pmean[X=`xmin`:`xmax`@AVE,Y=`yplotmin`:`yplotmax`,L=`d1`:`d2`@AVE,D=2]
+let rainmax=rain[Y=@MAX]
+let h2=h1[GY=yphys@ASN]
+let h=h2*rainmax/h2[Y=@MAX]
+let jet1=PREM[X=100E:130E@AVE,D=3,Y=`yplotmin`:`yplotmax`];
+let jet=jet1*rainmax/jet1[Y=@MAX]
+
+plot jet
+plot/over h
+plot/color=4/over rain
+
+list jet1[Y=@MAX]
+list h1[Y=@MAX]
+
+set window 3
+let d1=161
+let d2=200
+let h1=HOV[L=`d1`:`d2`@AVE,D=1]*100/57;
+let rain=Pmean[X=`xmin`:`xmax`@AVE,Y=`yplotmin`:`yplotmax`,L=`d1`:`d2`@AVE,D=2]
+let rainmax=rain[Y=@MAX]
+let h2=h1[GY=yphys@ASN]
+let h=h2*rainmax/h2[Y=@MAX]
+let jet1=MEIYU[X=100E:130E@AVE,D=3,Y=`yplotmin`:`yplotmax`];
+let jet=jet1*rainmax/jet1[Y=@MAX]
+
+plot jet
+plot/over h
+plot/color=4/over rain
+
+list jet1[Y=@MAX]
+list h1[Y=@MAX]
+
+set window 4
+let d1=201
+let d2=273
+let h1=HOV[L=`d1`:`d2`@AVE,D=1]*100/57;
+let rain=Pmean[X=`xmin`:`xmax`@AVE,Y=`yplotmin`:`yplotmax`,L=`d1`:`d2`@AVE,D=2]
+let rainmax=rain[Y=@MAX]
+let h2=h1[GY=yphys@ASN]
+let h=h2*rainmax/h2[Y=@MAX]
+let jet1=POSTM2[X=100E:130E@AVE,D=3,Y=`yplotmin`:`yplotmax`];
+let jet=jet1*rainmax/jet1[Y=@MAX]
+
+plot jet
+plot/over h
+plot/color=4/over rain
+
+list jet1[Y=@MAX]
+list h1[Y=@MAX]
+
+set window 5
+let d1=274
+let d2=320
+let h1=HOV[L=`d1`:`d2`@AVE,D=1]*100/57;
+let rain=Pmean[X=`xmin`:`xmax`@AVE,Y=`yplotmin`:`yplotmax`,L=`d1`:`d2`@AVE,D=2]
+let rainmax=rain[Y=@MAX]
+let h2=h1[GY=yphys@ASN]
+let h=h2*rainmax/h2[Y=@MAX]
+let jet1=FALL[X=100E:130E@AVE,D=3,Y=`yplotmin`:`yplotmax`];
+let jet=jet1*rainmax/jet1[Y=@MAX]
+
+plot jet
+plot/over h
+plot/color=4/over rain
+
+list jet1[Y=@MAX]
+list h1[Y=@MAX]

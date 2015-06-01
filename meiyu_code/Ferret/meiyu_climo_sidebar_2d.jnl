@@ -1,0 +1,133 @@
+!meiyu_climo_sidebar_2d.jnl
+
+!written by Jesse Day March 18th 2015. Variant of meiyu_climo_sidebar.jnl
+!used for figure 4
+
+!hovmoller frequency changes contained in meiyu_fq_diff_9day_1deglat_5879_8001.nc
+
+
+!!! Sidebars for difference plots - used in Figure 4.
+!three different plots attempted: 1) Pre-Meiyu 2) Post-Meiyu 3) Full year.
+
+
+set mode metafile
+cancel mode logo
+
+!cancel data APHRO_025deg_mean.nc
+set data APHRO_025deg_mean_5179.nc
+set data APHRO_025deg_mean_8007.nc
+
+!cancel data meiyuclimo_final_smooth_9day_1deg.nc
+set data meiyu_fq_diff_9day_1deglat_5879_8001.nc
+!set data meiyu_fq_diff_9day_1deglat.nc
+
+!cancel data composites.nc
+set data differences.nc
+
+let xmin=105;
+let xmax=123;
+let yplotmin=20;
+let yplotmax=48;
+
+define axis/Y=20N:40N:1/EDGES yphys
+
+let Pdiff=Pmean[D=2]-Pmean[D=1]
+!let fq=FQ_DIFF_SMTH[GY=yphys@ASN]
+
+
+! PRE-MEIYU - panel b
+
+set window 1
+let d1=121
+let d2=160
+let fq1=FQ_DIFF_SMTH[L=`d1`:`d2`@AVE,D=3];
+let rain=Pdiff[X=`xmin`:`xmax`@AVE,Y=`yplotmin`:`yplotmax`,L=`d1`:`d2`@AVE,D=2]
+let rmax=rain[Y=@MAX]
+let rmin=abs(rain[Y=@MIN])
+let rainmax=if rmax gt rmin then rmax else rmin
+let fq2=fq1[GY=yphys@ASN]
+let fqmax=fq2[Y=@MAX]
+let fqmin=abs(fq2[Y=@MIN])
+let fqm=if fqmax gt fqmin then fqmax else fqmin
+let fq=fq2*rainmax/fqm
+let jet1=PREM[X=100E:130E@AVE,D=4,Y=`yplotmin`:`yplotmax`];
+let jetmax=jet1[Y=@MAX]
+let jetmin=abs(jet1[Y=@MIN])
+let jetm=if jetmax gt jetmin then jetmax else jetmin
+let jet=jet1*rainmax/jetm
+
+plot/vlimits=-.85:.85 jet
+plot/over/vlimits=-.85:.85 fq
+plot/color=4/over/vlimits=-.85:.85 rain
+
+list jet1[Y=@MAX]
+list fq1[Y=@MAX]
+list jet1[Y=@MIN]
+list fq1[Y=@MIN]
+
+PAUSE
+
+
+! POST-MEIYU - panel c
+set window 2
+let d1=201
+let d2=273
+let fq1=FQ_DIFF_SMTH[L=`d1`:`d2`@AVE,D=3];
+let rain=Pdiff[X=`xmin`:`xmax`@AVE,Y=`yplotmin`:`yplotmax`,L=`d1`:`d2`@AVE,D=2]
+let rmax=rain[Y=@MAX]
+let rmin=abs(rain[Y=@MIN])
+let rainmax=if rmax gt rmin then rmax else rmin
+let fq2=fq1[GY=yphys@ASN]
+let fqmax=fq2[Y=@MAX]
+let fqmin=abs(fq2[Y=@MIN])
+let fqm=if fqmax gt fqmin then fqmax else fqmin
+let fq=fq2*rainmax/fqm
+let jet1=POSTM2[X=100E:130E@AVE,D=4,Y=`yplotmin`:`yplotmax`];
+let jetmax=jet1[Y=@MAX]
+let jetmin=abs(jet1[Y=@MIN])
+let jetm=if jetmax gt jetmin then jetmax else jetmin
+let jet=jet1*rainmax/jetm
+
+plot/vlimits=-.7:.7 jet
+plot/over/vlimits=-.7:.7 fq
+plot/color=4/over/vlimits=-.7:.7 rain
+
+list jet1[Y=@MAX]
+list fq1[Y=@MAX]
+list jet1[Y=@MIN]
+list fq1[Y=@MIN]
+
+PAUSE
+
+
+
+! FULL YEAR - panel a
+set window 3
+let d1=1
+let d2=365
+let fq1=FQ_DIFF_SMTH[L=`d1`:`d2`@AVE,D=3];
+let rain=Pdiff[X=`xmin`:`xmax`@AVE,Y=`yplotmin`:`yplotmax`,L=`d1`:`d2`@AVE,D=2]
+let rmax=rain[Y=@MAX]
+let rmin=abs(rain[Y=@MIN])
+let rainmax=if rmax gt rmin then rmax else rmin
+let rainmax=.15
+let fq2=fq1[GY=yphys@ASN]
+let fqmax=fq2[Y=@MAX]
+let fqmin=abs(fq2[Y=@MIN])
+let fqm=if fqmax gt fqmin then fqmax else fqmin
+let fq=fq2*rainmax/fqm
+!let jet1=POSTM2[X=100E:130E@AVE,D=4,Y=`yplotmin`:`yplotmax`];n=
+!let jetmax=jet1[Y=@MAX]
+!let jetmin=abs(jet1[Y=@MIN])
+!let jetm=if jetmax gt jetmin then jetmax else jetmin
+!let jet=jet1*rainmax/jetm
+
+!plot/vlimits=-.7:.7 jet
+plot/color=4/vlimits=-.15:.15 rain
+plot/over/vlimits=-.15:.15 fq
+
+list jet1[Y=@MAX]
+list fq1[Y=@MAX]
+list jet1[Y=@MIN]
+list fq1[Y=@MIN]
+
