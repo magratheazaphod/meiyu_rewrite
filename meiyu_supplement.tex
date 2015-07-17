@@ -50,7 +50,7 @@
 % (If you are submitting to a journal other than jgrga,
 % substitute the initials of the journal for "jgrga" below.)
 
-\documentclass[draft,grl]{agutexSI}
+\documentclass[grl]{agutexSI}
 \usepackage{hyperref}
 \usepackage{rotating}
 \usepackage{amsmath}
@@ -187,11 +187,9 @@
 
 \vspace{2mm}
 
-\noindent\textbf{Figures S1 to S5}
+\noindent\textbf{Figures S1 to S4}
 \begin{itemize}
 	\item Figure S1-S4: A demonstration of the functionality of the rainband detection algorithm by showing different cases of its operation, in support of supplementary text section S2.
-
-	\item Figure S5: Autocorrelation of daily mean jet latitude during the Pre- and Post-Meiyu, with and without averaging into blocks.
 
 \end{itemize}
 
@@ -208,7 +206,27 @@
 \item Table S6: Changes in rainband latitude and intensity during 1980-2007 versus 1951-1979 and $p$-value of their significance.
 
 \item Tables S7-S8: Same as Tables S5-S6, but for 1994-2007 versus 1979-1993.
+
 \end{itemize}
+
+\vspace{5mm}
+
+\noindent\textbf{{\Large S1 Alternative Metrics}}
+
+\vspace{2mm}
+
+Given the relative complexity of the rainband detection algorithm, it is important to compare the results obtained with our rainband metric to that supplied by other, simpler metrics. To that end, we have repeated the same protocols and tests of significance of twentieth-century changes for a range of simpler metrics of rainfall latitude, intensity and frequency, as listed below:
+
+\textbf{{Metrics}}
+\begin{itemize}
+\item Latitude: 1) Latitude of maximum precipitation; 2) Latitude of the centroid of precipitation
+
+\item Intensity: 3) Intensity of maximum; 4) China average (105-123E, 20-40N); 5) North China average (107.5-125E, 37-42N); 6) South China average (107.5-122.5E, 27-33N)
+
+\item Frequency: 7) Frequency of North China rainfall (107.5-125E, 37-42N); 8) Frequency of South China rainfall (107.5-122.5E, 27-33N)
+\end{itemize}
+
+The regions for North and South China are selected to match those in \cite{Yu2010}. For calculating frequency, our criterion is that area-averaged North/South China rainfall is greater than .5 mm day$^{-1}$.
 
 \vspace{5mm}
 
@@ -232,41 +250,8 @@ The autocorrelation of daily rainfall in China is $\tau =2-4 \mathrm{days}$ and 
 
 %%% BIBLIOGRAPHY - .bbl file posted directly into manuscript below %%%
 
-%\bibliographystyle{agufull08}
-%\bibliography{meiyu_supp}
-
-\begin{thebibliography}{4}
-\providecommand{\natexlab}[1]{#1}
-\expandafter\ifx\csname urlstyle\endcsname\relax
-  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
-  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
-  \urlstyle{rm}\Url}\fi
-
-\bibitem[{\textit{Schiemann et~al.}(2009)\textit{Schiemann, L\"{u}thi, and
-  Sch\"{a}r}}]{Schiemann2009}
-Schiemann, R., D.~L\"{u}thi, and C.~Sch\"{a}r (2009), {Seasonality and
-  Interannual Variability of the Westerly Jet in the Tibetan Plateau Region},
-  \textit{J. Clim.}, \textit{22}, 2940--2957, \doi{10.1175/2008JCLI2625.1}.
-
-\bibitem[{\textit{Singh et~al.}(2014)\textit{Singh, Tsiang, Rajaratnam, and
-  Diffenbaugh}}]{Singh2014}
-Singh, D., M.~Tsiang, B.~Rajaratnam, and N.~S. Diffenbaugh (2014), {Observed
-  changes in extreme wet and dry spells during the South Asian summer monsoon
-  season}, \textit{Nat. Clim. Chang.}, \textit{4}, 456--461,
-  \doi{10.1038/NCLIMATE2208}.
-
-\bibitem[{\textit{von Storch and Zwiers}(1999)}]{VonStorch1999}
-von Storch, H., and F.~W. Zwiers (1999), \textit{{Statistical Analysis in
-  Climate Research}}, 371--374 pp., Cambridge University Press, Cambridge, UK.
-
-\bibitem[{\textit{Yatagai et~al.}(2012)\textit{Yatagai, Kamiguchi, Arakawa,
-  Hamada, Yasutomi, and Kitoh}}]{Yatagai2012}
-Yatagai, A., K.~Kamiguchi, O.~Arakawa, A.~Hamada, N.~Yasutomi, and A.~Kitoh
-  (2012), {APHRODITE: Constructing a Long-Term Daily Gridded Precipitation
-  Dataset for Asia Based on a Dense Network of Rain Gauges}, \textit{Bull. Am.
-  Meteorol. Soc.}, \textit{93}, 1401--1415, \doi{10.1175/BAMS-D-11-00122.1}.
-
-\end{thebibliography}
+\bibliographystyle{agufull08}
+\bibliography{meiyu_supp}
 
 \end{article}
 
@@ -453,6 +438,98 @@ Yatagai, A., K.~Kamiguchi, O.~Arakawa, A.~Hamada, N.~Yasutomi, and A.~Kitoh
 \end{table}
 
 
+%%%% TABLE 9- ALTERNATIVE METRIC STATISTICS, 1951-1979 %%%%
+\begin{table}
+\settablenum{S9}  
+
+\centering
+
+\caption{Mean and standard deviation of mean of metrics $M_1$ to $M_8$ for 1951-1979 as previously defined. Standard deviations of means are obtained by a permutation method with 10,000 iterations. Statistically significant changes at the 95\%/99\% level are indicated by bold/asterisk and bold as subsequently calculated in Table S12.}
+
+\begin{tabular}{ l c c c c c c c c}
+	 \multicolumn{9}{c}{\textbf{1951-1979 Means}}  \\
+	 \textbf{Time Period} 						& $\boldsymbol{M_1}$ & $\boldsymbol{M_2}$ & $\boldsymbol{M_3}$ & $\boldsymbol{M_4}$ & $\boldsymbol{M_5}$ & $\boldsymbol{M_6}$ & $\boldsymbol{M_7}$ & $\boldsymbol{M_8}$ \\
+	 \hline
+	\textbf{Spring Rains} (Mar 1-Apr 30, 60-120) 	& $26.3 \pm 0.2$ 	&  $\boldsymbol{27.9 \pm 0.1}$	&  $31.2 \pm 1.1$ 	&$2.6 \pm 0.1$ 	& $.52 \pm 0.05$ 		& $3.9 \pm .2$ & $25.0 \pm 2.0$ & $71.7 \pm 2.1$  \\
+	\textbf{Pre-Meiyu} (May 1-Jun 9, 121-160) 		& $25.7 \pm 0.2$ 	&  $27.6 \pm 0.1$				&  $59.4 \pm 1.9$ 	&$4.4 \pm 0.2$	& $1.20 \pm 0.11$ 	& $5.5 \pm .3$ & $47.1 \pm 3.0$ & $82.6 \pm 2.2$ \\
+	\textbf{Meiyu} (Jun 10-Jul 19, 161-120) 		& $27.9 \pm 0.3$ 	&  $29.1 \pm 0.2$				&  $72.5 \pm 2.1$ 	&$5.1 \pm 0.1$ 	& $2.78 \pm 0.18$		& $5.9 \pm .3$ & $81.1 \pm 2.4$ & $91.0 \pm 1.7$ \\
+	\textbf{Post-Meiyu} (Jul 20-Sep 30) 			& $27.4 \pm 0.3 $	&  $29.4 \pm 0.1$ 				&  $69.1 \pm 1.9$ 	&$4.1 \pm 0.1$ 	& $\boldsymbol{3.20 \pm 0.16^*}$		& $3.7 \pm .2$ & $76.4 \pm 1.8$ & $82.0 \pm 1.7$ \\
+	\textbf{Fall Rains} (Oct 1-Nov 16) 				& $25.6 \pm 0.2 $ 	&  $28.5 \pm 0.2$				&  $36.9 \pm 1.8$ 	&$1.9 \pm 0.1$	& $.76 \pm 0.09$ 		& $2.3 \pm .2$ & $30.7 \pm 2.5$ & $57.2 \pm 2.6$ \\
+	\textbf{Full Year} (1-365) 					& $26.2 \pm 0.1$ 	&  $28.3 \pm 0.1$ 				&  $43.5 \pm 0.7$ 	&$2.8 \pm 0.1$ 	& $\boldsymbol{1.31 \pm 0.05}$		& $3.4 \pm .1$ & $40.0 \pm 1.0$ & $67.7 \pm 1.0$ \\
+\end{tabular}
+\label{ts9}
+\end{table}
+
+
+%%%% TABLE 10 - ALTERNATIVE METRIC STATISTICS, 1980-2007 %%%%
+\begin{table}
+\settablenum{S10}  
+
+\centering
+
+\caption{Mean and standard deviation of mean of metrics $M_1$ to $M_8$ for 1980-2007 as previously defined. Standard deviations of means are obtained by a permutation method with 10,000 iterations. Statistically significant changes at the 95\%/99\% level are indicated by bold/asterisk and bold as subsequently calculated in Table S12.}
+
+\begin{tabular}{ l c c c c c c c c}
+	 \multicolumn{9}{c}{\textbf{1980-2007 Means}} \\
+	 \textbf{Time Period} 						& $\boldsymbol{M_1}$ & $\boldsymbol{M_2}$ 		& $\boldsymbol{M_3}$ & $\boldsymbol{M_4}$ & $\boldsymbol{M_5}$ & $\boldsymbol{M_6}$ & $\boldsymbol{M_7}$ & $\boldsymbol{M_8}$ \\	 \hline
+	\textbf{Spring Rains} (Mar 1-Apr 30, 60-120)  	& $26.2 \pm 0.2$ 	&  $\boldsymbol{27.6 \pm 0.1}$	&  $32.4 \pm 1.0$ 	&$2.6 \pm 0.1$ 	& $.51 \pm 0.06$ 		& $3.8 \pm .2$ & $24.1 \pm 2.1$ & $72.5 \pm 2.2$  \\
+	\textbf{Pre-Meiyu} (May 1-Jun 9, 121-160)  	& $25.4 \pm 0.2$ 	&  $27.7 \pm 0.2$				&  $57.0 \pm 1.8$ 	&$4.2 \pm 0.2$	& $1.31 \pm 0.12$ 	& $5.0 \pm .3$ & $48.8 \pm 3.0$ & $79.6 \pm 2.4$ \\
+	\textbf{Meiyu} (Jun 10-Jul 19, 161-120)		& $27.6 \pm 0.3$ 	&  $29.1 \pm 0.1$				&  $73.6 \pm 2.2$ 	&$5.2 \pm 0.1$ 	& $2.79 \pm 0.18$		& $6.4 \pm .3$ & $81.3 \pm 2.3$ & $92.1 \pm 1.6$ \\
+	\textbf{Post-Meiyu} (Jul 20-Sep 30) 			& $27.0 \pm 0.2 $	&  $29.2 \pm 0.1$ 				&  $67.5 \pm 1.9$ 	&$4.0 \pm 0.1$ 	& $\boldsymbol{2.70 \pm 0.14^*}$		& $3.9 \pm .2$ & $75.3 \pm 1.9$ & $85.5 \pm 1.6$ \\
+	\textbf{Fall Rains} (Oct 1-Nov 16) 				& $26.0 \pm 0.3 $ 	&  $28.5 \pm 0.2$				&  $36.4 \pm 2.1$ 	&$1.8 \pm 0.1$	& $.65 \pm 0.08$ 		& $2.4 \pm .2$ & $28.0 \pm 2.5$ & $54.7 \pm 2.8$ \\
+	\textbf{Full Year} (1-365)					& $26.2 \pm 0.1$ 	&  $28.2 \pm 0.1$ 				&  $43.1 \pm 0.7$ 	&$2.8 \pm 0.1$ 	& $\boldsymbol{1.20 \pm 0.04}$		& $3.4 \pm .1$ & $39.4 \pm 1.0$ & $68.6 \pm 1.0$ \\
+\end{tabular}
+\label{ts10}
+\end{table}
+
+
+%%%% TABLE 11 - AUTOCORRELATION TIME SCALE OF ALTERNATIVE METRICS %%%%
+\begin{table}
+\settablenum{S11}  
+
+\centering
+
+\caption{Autocorrelation timescale of metrics $M_1$-$M_8$, calculated as described in section S2. In subsequent calculations of significance, the block length for moving blocks bootstrapping is chosen}
+
+\begin{tabular}{ l c c c c c c c c}
+	 \multicolumn{9}{c}{\textbf{1980-2007 Means}} \\
+	 \textbf{Time Period} 						& $\boldsymbol{M_1}$ & $\boldsymbol{M_2}$ & $\boldsymbol{M_3}$ & $\boldsymbol{M_4}$ & $\boldsymbol{M_5}$ & $\boldsymbol{M_6}$ & $\boldsymbol{M_7}$ & $\boldsymbol{M_8}$ \\	 \hline
+	 \hline
+	\textbf{Spring Rains} (Mar 1-Apr 30, 60-120) 	& 2.20 & 2.52 & 2.49 & 1.77 & 1.94 & 1.57 & 1.60 & 1.92 \\
+	\textbf{Pre-Meiyu} (May 1-Jun 9, 121-160) 		& 2.08 & 2.22 & 2.02 & 1.97 & 1.66 & 1.66 & 1.92 & 1.92 \\		
+	\textbf{Meiyu} (Jun 10-Jul 19, 161-120) 		& 2.71 & 3.65 & 2.32 & 3.38 & 2.22 & 3.47 & 2.01 & 2.10 \\
+	\textbf{Post-Meiyu} (Jul 20-Sep 30) 			& 1.93 & 2.76 & 2.05 & 3.20 & 2.31 & 3.24 & 2.13 & 2.46 \\
+	\textbf{Fall Rains} (Oct 1-Nov 16) 				& 1.58 & 2.69 & 3.32 & 3.14 & 1.37 & 1.37 & 1.44 & 3.57 \\
+	\textbf{Full Year} (1-365)	 				& 2.16 & 3.03 & 2.56 & 2.75 & 2.14 & 2.14 & 1.84 & 2.82 \\
+\end{tabular}
+\label{ts11}
+\end{table}
+
+
+%% TABLE 12 - p-value of change in metrics M_1-M_8 between 1951-1979 and 1980-2007
+\begin{table}
+\settablenum{S12}  
+
+\centering
+
+\caption{Significance level $p$ of changes in metrics $M_1$-$M_8$ between 1951-1979 and 1980-2007, as calculated by a moving blocks bootstrap for latitude and intensity metrics with 10,000 iterations and block length of $\tau$ rounded up to nearest integer, and analytically calculated using effective degrees of freedom N=$n/\tau$ for frequency metrics $M_7$ and $M_8$. Statistically significant changes at the 95\%/99\% level are indicated by bold/asterisk and bold.}
+
+\begin{tabular}{ l c c c c c c c c}
+	 \multicolumn{9}{c}{\textbf{1980-2007 Means}} \\
+	 \textbf{Time Period} 						& $\boldsymbol{M_1}$ & $\boldsymbol{M_2}$ & $\boldsymbol{M_3}$ & $\boldsymbol{M_4}$ & $\boldsymbol{M_5}$ & $\boldsymbol{M_6}$ & $\boldsymbol{M_7}$ & $\boldsymbol{M_8}$ \\	 \hline
+	 \hline
+	\textbf{Spring Rains} (Mar 1-Apr 30, 60-120) 	& .180 & \textbf{.017} 	& .850 & .414 	& .346 			& .320 & .298 & .649 \\
+	\textbf{Pre-Meiyu} (May 1-Jun 9, 121-160) 		& .077 & .819 			& .080 & .154 & .871 			& .038 & .729 & .091 \\		
+	\textbf{Meiyu} (Jun 10-Jul 19, 161-120) 		& .091 & .468 			& .696 & .808 & .503 			& .943 & .538 & .745 \\
+	\textbf{Post-Meiyu} (Jul 20-Sep 30) 			& .046 & .150 			& .162 & .132 & \textbf{.0004*} 	& .848 & .296 & .975 \\
+	\textbf{Fall Rains} (Oct 1-Nov 16) 				& .965 & .412 			& .442 & .154 & .049 			& .620 & .107 & .244 \\
+	\textbf{Full Year} (1-365)	 				& .726 & .068 			& .314 & .302 & \textbf{.0068} 	& .776 & .242 & .784 \\
+	
+\end{tabular}
+\label{ts12}
+\end{table}
+
+
 
 %%% SUPPLEMENTARY FIGURES %%%
  
@@ -460,7 +537,7 @@ Yatagai, A., K.~Kamiguchi, O.~Arakawa, A.~Hamada, N.~Yasutomi, and A.~Kitoh
 \begin{figure}
 \setfigurenum{S1}  
 
-\noindent\includegraphics[width=36pc]{S1}
+\noindent\includegraphics[width=36pc]{Figures/S1}
 \caption{The first step of the rainband detection algorithm checks to see whether a five-degree continuous longitudinal band of precipitation maxima above 10 mm day$^{-1}$ exists. If so, a rainband fit is attempted. a) 25 May 2007 - the continuous maximum criterion is met and a fit is attempted. b) 11 June 2007 - although there is abundant rainfall in some locations, it appears not to be frontal and the continuous maximum criterion is failed. No fit is attempted.}
 \end{figure}
 
@@ -468,7 +545,7 @@ Yatagai, A., K.~Kamiguchi, O.~Arakawa, A.~Hamada, N.~Yasutomi, and A.~Kitoh
 \begin{figure}
 \setfigurenum{S2}  
 
-\noindent\includegraphics[width=36pc]{S2}
+\noindent\includegraphics[width=36pc]{Figures/S2}
 \caption{Display of the functionality of the recursive convergent algorithm. On 29 April 2007, a strong maximum in southernmost China skews our initial rainband fit (a), but the algorithm eventually converges on the most prominent coherent band via tighter windowing (d).}
 \end{figure}
 
@@ -476,7 +553,7 @@ Yatagai, A., K.~Kamiguchi, O.~Arakawa, A.~Hamada, N.~Yasutomi, and A.~Kitoh
 \begin{figure}
 \setfigurenum{S3}  
 
-\noindent\includegraphics[width=36pc]{S3}
+\noindent\includegraphics[width=36pc]{Figures/S3}
 \caption{a) The algorithm converges on the strongest rainband, around 37N (defined as the ``primary rainband''). b) The rainfall associated with the primary rainband is removed, and we check for the presence of another rainband (a ``secondary rainband''), again using the continuous maximum criterion.}
 \end{figure}
 
@@ -484,7 +561,7 @@ Yatagai, A., K.~Kamiguchi, O.~Arakawa, A.~Hamada, N.~Yasutomi, and A.~Kitoh
 \begin{figure}
 \setfigurenum{S4}  
 
-\noindent\includegraphics[width=36pc]{S4}
+\noindent\includegraphics[width=36pc]{Figures/S4}
 \caption{A quality control algorithm is used to exclude poor fits. a) 18 August 2007 - Days with a high Taiwan fraction (here, corresponding to the passage of Typhoon Sepat) are excluded from our statistics. b) June 4 2007 - A high-quality fit is achieved. c) 17 April 2007 - Although a fit is reached, it explains the distribution of daily rainfall poorly and is therefore excluded from rainband statistics. d) 21 May 2007 (same day as Figure S3) - An initial fit appears to be of poor quality ($Q<.6$). However, after finding a secondary rainband, we determine that conditional quality scores $Q_1$ and $Q_2$ are high, and the day is included in our statistics.}
 \end{figure}
 
